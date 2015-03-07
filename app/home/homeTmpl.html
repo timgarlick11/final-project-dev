@@ -1,0 +1,231 @@
+
+<div class='userSearch'>
+
+<input ng-model='searchRecipe' placeholder='search recipe'>
+<button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
+
+</div>
+<!-- <button ng-click='addData(firstIngredients)'>test</button>
+<button ng-click='moveData'>test2</button> -->
+
+<!-- 
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a href='{{firstUrl}}'>
+   
+      <img ng-src="{{firstImage}}">
+  	</a>
+      <div class="caption" style='text-align: center'>
+        <h3>{{firstTitle}}</h3>
+        <p>add it to your calendar</p>
+       <div class='requestButtons'>
+       <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
+        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
+         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
+         <button class="btn btn-primary" role="button">Sun</button>
+      	</div>
+      </div>
+    </div>
+            
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        <a href='{{secondUrl}}'>
+      <img ng-src='{{secondImage}}'>
+  	</a>
+      <div class="caption" style='text-align: center'>
+        <h3>{{secondTitle}}</h3>
+        <p>add it to your calendar</p>
+      <div class='requestButtons'> <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
+        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
+         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
+         <button class="btn btn-primary" role="button">Sun</button>
+       </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        <a href='{{thirdUrl}}'>
+      <img ng-src='{{thirdImage}}'>
+  	</a>
+      <div class="caption" style='text-align: center'>
+        <h3>{{thirdTitle}}</h3>
+        <p>add it to your calendar</p>
+        <div class='requestButtons'>
+        <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
+        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
+         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
+         <button class="btn btn-primary" role="button">Sun</button>
+      </div>
+      </div>ng-src="{{preLoad}}" || 
+    </div>
+  </div>-->
+  <div class='day-container'>
+  <div class='day one_breafast'><p ng-repeat='recipe in recipes'>{{recipe.$value}}</p><img  ng-src='{{image}}' style='width: 100%; height: 100%'/></div>
+	<div class='day two_breafast'><button ng-click='loadRecipes()'>Dispay</button></div>
+	<div class='day three_breafast'></div>
+	<div class='day four_breafast'></div>
+	<div class='day five_breafast'></div>
+	<div class='day six_breafast'></div>
+	<div class='day seven_breafast'></div>
+  </div>
+ 
+<!-- <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
+				
+
+					<button ng-click='addData("Monday")'>Monday</button>
+					<button ng-click='addData("Tuesday")'>Tuesday</button>
+ <div class='flip-container'>
+
+  <div class="flip"> 
+        <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
+            <div class="face front"> 
+              <div class='secondImage'>
+          			<img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{firstImage}}'>
+          		<div class='ratings'>
+          			<h6>Star Rating: {{firstStarRating}}</h6>
+					<h6><span ng-repeat="rating in ratings"> star-rating rating-value="rating.current" max="rating.max" </span>{{firstReviews}}</h6>  
+					<h4> Servings: {{firstServings}}</h4>
+				</div>
+          	  </div>
+            	</div> 
+            		
+            		<div class="face back"> 
+               			<div class='firstIngredients'>
+						<h1 style='text-align: center;'>{{firstTitle}}</h1>
+						<h2>Ingredients</h2>
+					<ul ng-repeat='firstItems in firstIngredients'>
+						<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
+					</ul>
+				</div>
+            </div> 
+        </div> 
+    </div> 
+
+
+  <div class="flip2"> 
+        <div class="card2" ng-class="{'flipped2':isFlipped2}" ng-click="isFlipped2=!isFlipped2"> 
+            <div class="face2 front2"> 
+              <div class='secondImage'>
+          			<img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{secondImage}}'>
+          		<div class='ratings'><h6>Star Rating: {{secondStarRating}}</h6>
+					<h6>Total Reviews: {{secondReviews}}</h6>  
+					<h4> Servings: {{secondServings}}</h4>
+				</div>
+          	  </div>
+            	</div> 
+            		
+            		<div class="face2 back2"> 
+               			<div class='firstIngredients'>
+						<h1 style='text-align: center;'>{{secondTitle}}</h1>
+						<h2>Ingredients</h2>
+					<ul ng-repeat='secondItems in secondIngredients'>
+						<li style='width: 100%; height: 100%'>{{secondItems.Name}} {{secondItems.Quantity}} {{secondItems.Unit}} </li>
+					</ul>
+				</div>
+            </div> 
+        </div> 
+    </div> 
+
+
+  <div class="flip3"> 
+        <div class="card3" ng-class="{'flipped3':isFlipped3}" > 
+            <div class="face3 front3"> 
+              <div class='secondImage'>
+          			<img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{thirdImage}}' err-SRC='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-click="isFlipped3=!isFlipped3">
+          		<div class='ratings'><h6>Star Rating: {{thirdStarRating}}</h6>
+					<h6>Total Reviews: {{thirdReviews}}</h6>  
+					<h4> Servings: {{thirdServings}}</h4>
+				</div>
+          	  </div>
+            	</div> 
+            		
+            		<div class="face3 back3" ng-click="isFlipped3=!isFlipped3"> 
+               			<div class='firstIngredients'>
+						<h1 style='text-align: center;'>{{thirdTitle}}</h1>
+						<h2>Ingredients</h2>
+					<ul ng-repeat='thirdItems in thirdIngredients'>
+						<li style='width: 100%; height: 100%'>{{thirdItems.Name}} {{thirdItems.Quantity}} {{thirdItems.Unit}} </li>
+					</ul>
+				</div>
+            </div> 
+        </div> 
+    </div> 
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {{meow}}
+</div>
+ 
+<div class='mainContainer'>
+	<div class='firstIngredients'>
+		<h1>{{firstTitle}}</h1>
+		<h2>Ingredients</h2>
+		<h6>Star Rating: {{firstStarRating}}</h6>
+		<h6>Total Reviews: {{firstReviews}}</h6>  
+		<h4> Servings: {{firstServings}}</h4>
+		<ul ng-repeat='firstItems in firstIngredients'>
+			<li>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
+	
+		</ul>
+	</div>
+
+<div class='image'> 
+	<img ng-src='{{firstImage}}'>
+</div>
+
+<div class='calendar-container'>
+		<h4> Time: {{firstTime}} mins </h4>
+		{{firstInstructions}}
+
+
+
+</div>
+<div class='secondIngredients'>
+		<h1>{{secondTitle}}</h1>
+		<h2>Ingredients</h2>
+		<h6>Star Rating: {{secondStarRating}}</h6>
+		<h6>Total Reviews: {{secondStarReviews}}</h6>  
+		<h4> Servings: {{servings}}</h4>
+		<ul ng-repeat='secondItems in secondIngredients'>
+			<li>{{secondItems.Name}} {{secondItems.Quantity}} {{secondItems.Unit}} </li>
+	
+		</ul>
+	</div>
+<div class='secondImage'> 
+	<img ng-src='{{secondImage}}'>
+</div>
+
+<div class='secondInstructions'>
+		<h4> Time: {{secondTime}} mins </h4>
+		{{secondInstructions}}
+</div>
+{{tim}}
+</div> -->
+<!-- Title: "Pancakes"TotalMinutes: 10VariantOfRecipeID: nullVerifiedByClass: "helper"VerifiedDateTime: "/Date(1411668622087)/"WebURL: "http://www.bigoven.com/recipe/pancakes/819409"YieldNumber: 4YieldUnit: "Servings" -->
+
+
+
+
+
+ 

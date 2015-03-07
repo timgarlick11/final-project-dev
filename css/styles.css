@@ -1,0 +1,375 @@
+html, body {
+
+width:100%;
+height: 100%;
+margin: 0;
+
+
+}
+/** {
+  border: 1px solid black;
+  box-sizing: border-box;
+}*/
+.nav {
+
+	background-color:
+	hsla(178,76%,35%,1); 
+	margin: 0;
+  
+}
+
+
+
+ .nav-tabs {
+ 	color: hsla(320,100%,98%,1);
+ 	margin: 0 auto;
+
+ }
+
+ .firstIngredients {
+/**/
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+float: left;
+}
+
+
+
+
+ .secondImage {
+ position:relative;
+height: 175px;
+width: 150px;
+
+  box-shadow: 0 0 5px hsla(0,0%,17%,1);
+
+border-width: 1px;
+
+ color: black;
+ margin: 0 auto;
+z-index: 3;
+}
+.secondImage > img {
+	height: 100%;
+	width: 100%;
+}
+.ratings {
+position: absolute;
+height: 110px;
+top: 239px;
+right:-75px;
+background:hsla(70,8%,15%,.85);
+width: 300px;
+margin: 50px auto;
+box-shadow: 0 0 2px hsla(0,0%,17%,1);
+/*z-index:5;*/
+
+
+
+}
+
+ .secondInstructions{
+ width: 40%;
+ height: 200px;
+float: left;
+/*margin: 0 auto;*/
+border: 1px solid black;
+/*display: flex;
+box-sizing: border-box;
+flex-direction: row;
+flex-wrap: wrap;*/
+background-color: white;
+overflow: auto;
+
+}
+
+
+ .top {
+ 	height:10%;
+ 	width: 14.28%;
+ 	border: 1px solid black;
+ 	box-sizing: border-box;
+ 	background-color: hsla(1,32%,46%,.7);
+ 	text-align: center;
+ 	float: left;
+ }
+ 
+.day-container {
+
+  height:20%;
+  width:85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+ .day {
+ 	box-shadow: 0 0 5px hsla(0,0%,17%,1);
+ 	height: 100%;
+ 	width: 13%;
+ 
+ 	background-color: hsla(174,27%,52%,1);
+ 	
+ }
+.col-sm-6.col-md-4 {
+	-webkit-perspective: 800;
+  position: relative;
+	margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	
+	
+}
+.thumbnail {
+	height: 450px;
+
+
+}
+.thumbnail > a > img {
+
+width: 60%;
+height: 50%;
+
+}
+.btn-primary  {
+	background-color: red;
+}
+p {
+	padding-top: 50px;
+	
+}
+.requestButtons {
+	height: 35px;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 20px;
+
+}
+
+
+
+body {
+ background: #ccc;   
+}
+.card {
+  box-shadow: 0 0 10px hsla(0,0%,17%,1);
+  border-radius: 5px;
+
+}
+.face {
+  border-radius: 5px;
+}
+.card:hover {
+  box-shadow: 0 0 15px hsla(206,65%,51%,1);
+}
+
+.flip-container {
+border-radius: 5px;
+  height: 90%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.flip {
+  -webkit-perspective: 800;
+   width: 300px;
+   height: 400px;
+  /* position: relative;
+   left: 80px;
+   top: 50px;*/
+   display: flex;
+   justify-content: space-between ;
+
+  
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 1s;
+}
+.flip .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden ;
+  z-index: 9999;
+    font-family: Georgia;
+    font-size: 1em;
+   
+   /* line-height: 200px;*/
+}
+.flip .card .front {
+  position: absolute;
+  z-index: 1;
+    background: white;
+    color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.flip .card .back {
+  -webkit-transform: rotatey(-180deg);
+ 	position: absolute;
+ 	margin: 0 auto;
+    background: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid transparent;
+    z-index: 99;
+}
+
+.card2 {
+  box-shadow: 0 0 10px hsla(0,0%,17%,1);
+}
+.card2:hover {
+  box-shadow: 0 0 15px hsla(206,65%,51%,1);
+}
+.flip2 {
+  -webkit-perspective: 800;
+   width: 300px;
+   height: 400px;
+/*  position: relative;
+   left: 480px;
+   bottom: 350px;*/
+   display: flex;
+   justify-content: center;
+
+  
+}
+.flip2 .card2.flipped2 {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip2 .card2 {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 1s;
+}
+.flip2 .card2 .face2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden ;
+  z-index: 1;
+    font-family: Georgia;
+    font-size: 1em;
+   
+   /* line-height: 200px;*/
+}
+.flip2 .card2 .front2 {
+  position: absolute;
+ /* z-index: 1;*/
+    background: white;
+    color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.flip2 .card2 .back2 {
+  -webkit-transform: rotatey(-180deg);
+ 	position: absolute;
+ 	
+    background: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.card3 {
+  box-shadow: 0 0 10px hsla(0,0%,17%,1);
+}
+.card3:hover {
+  box-shadow: 0 0 15px hsla(206,65%,51%,1);
+}
+
+.flip3 {
+  -webkit-perspective: 800;
+   width: 300px;
+   height: 400px;
+ /*  position: relative;
+   left: 880px;
+   bottom: 748px;*/
+   display: flex;
+   justify-content: center;
+
+  
+}
+.flip3 .card3.flipped3 {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip3 .card3 {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 1s;
+}
+.flip3 .card3 .face3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden ;
+  z-index: 9999;
+    font-family: Georgia;
+    font-size: 1em;
+   
+   /* line-height: 200px;*/
+}
+.flip3 .card3 .front3 {
+  position: absolute;
+  z-index: 1;
+    background: white;
+    color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.flip3 .card3 .back3 {
+  -webkit-transform: rotatey(-180deg);
+ 	position: absolute;
+
+ 	margin: 0 auto;
+    background: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid transparent;
+    z-index: 99;
+}
+
+/*
+
+    <div class="flip2"> 
+        <div class="card2" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
+            <div class="face2 front2"> 
+                Front
+            </div> 
+            <div class="face2 back2"> 
+                Back
+            </div> 
+        </div> 
+    </div> 
+</div>
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
