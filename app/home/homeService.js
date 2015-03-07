@@ -11,7 +11,7 @@ var deferred = $q.defer()
 
 	$http({
 		method:'GET',
-		url:'http://api.bigoven.com/recipes?title_kw=' + userSearch + ''
+		url:'http://api.bigoven.com/recipes?title_kw=' + userSearch + '&pg=1&rpp=20&api_key=dvx51ehi7INBAt70is6nz04gOvJmD4lt'
 	}).then(function(results) {
 		// console.log(results)
 		var recipeIdArr = [results.data.Results[0].RecipeID, results.data.Results[1].RecipeID,results.data.Results[2].RecipeID] ;
@@ -29,7 +29,7 @@ this.getRecipe = function(recipeID) {
 	
 	$http({
 		method:'GET',
-		url:'http://api.bigoven.com/recipe/' + recipeID + ''
+		url:'http://api.bigoven.com/recipe/' + recipeID + '?api_key=dvx51ehi7INBAt70is6nz04gOvJmD4lt'
 
 	}).then(function(recipeResults) {
 		// console.log(recipeResults)

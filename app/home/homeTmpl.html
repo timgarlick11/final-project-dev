@@ -81,8 +81,8 @@
 <!-- <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
 				
 
-					<button ng-click='addData("Monday")'>Monday</button>
-					<button ng-click='addData("Tuesday")'>Tuesday</button>
+					<button ng-click='newData(Monday)'>Monday</button>
+					<button ng-click='newData("Tuesday")'>Tuesday</button>
  <div class='flip-container'>
 
   <div class="flip"> 
@@ -92,7 +92,7 @@
           			<img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{firstImage}}'>
           		<div class='ratings'>
           			<h6>Star Rating: {{firstStarRating}}</h6>
-					<h6><span ng-repeat="rating in ratings"> star-rating rating-value="rating.current" max="rating.max" </span>{{firstReviews}}</h6>  
+					<h6>{{firstReviews}}</h6>  
 					<h4> Servings: {{firstServings}}</h4>
 				</div>
           	  </div>
@@ -163,7 +163,9 @@
 </div>
 
 
-
+<div ng-repeat='test in recipe1'>
+  {{recipe1}}
+</div>
 
 
 
