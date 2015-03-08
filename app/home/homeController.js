@@ -1,6 +1,6 @@
 var app = angular.module('theHomeLife')
  
-app.controller('homeController', function ($scope, homeService, $firebase) {
+app.controller('homeController', function ($scope, homeService, $firebase, $location) {
  
         //on load = get weekOfReceipes 
         //loop through those and make a "homeService.getData(receipe) for each one."
@@ -17,17 +17,39 @@ app.controller('homeController', function ($scope, homeService, $firebase) {
             // var secondRecipe = [];
             // var thirdRecipe = []
 
-           var allRecipeId = []
+            $scope.enterKey = function(keyEvent) {
+                if (keyEvent.which === 13) {
+                       homeService.getData($scope.searchRecipe).then(function (resultArr) {
+      
+            
+          
+            $scope.searchRecipe = '';
+            
+            // getRecipe(resultsArr[i]);
+            //don't call this here. getRecipe instead. Cleaner.
+            //take the results from that call and push them in a common $scope.recipes array. Then Ng-repeat over that.
+            //push all the receipes into a common array
+            //then ng-repeat over thoser receipes to avoid duplicating code like below =)
+            $scope.recipes = [];
+            for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
+                homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
+                    console.log('recipeResults1: ',recipeResults);
+                  $scope.recipes.push(recipeResults);
+                }, function(err) {
+                    console.log('FAILED!!!: ', err);
+                })
+            }
+        })
+    }
+}
+
+           
     $scope.submitQuery = function () {
 
            
         homeService.getData($scope.searchRecipe).then(function (resultArr) {
        
-            var first = resultArr[0]
-            var second = resultArr[1]
-            var third = resultArr[2]
-            allRecipeId.push(first, second, third)
-            console.log(allRecipeId)
+          
             $scope.searchRecipe = '';
  			
             // getRecipe(resultsArr[i]);
@@ -35,40 +57,16 @@ app.controller('homeController', function ($scope, homeService, $firebase) {
             //take the results from that call and push them in a common $scope.recipes array. Then Ng-repeat over that.
             //push all the receipes into a common array
             //then ng-repeat over thoser receipes to avoid duplicating code like below =)
-           
-            homeService.getRecipe(first).then(function (recipeResults1) {
- 	              
-                var firstRecipe = [];
-	 			firstRecipe.push(recipeResults1)
-                console.log(firstRecipe)
-		      $scope.recipe1 = firstRecipe
-              $scope.firstIngredients = recipeResults1[0]
-               
- 	
-            })
+            $scope.recipes = [];
+            for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
+                homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
+                    console.log('recipeResults1: ',recipeResults);
+                  $scope.recipes.push(recipeResults);
+                }, function(err) {
+                    console.log('FAILED!!!: ', err);
+                })
+            }
 
-            homeService.getRecipe(second).then(function (recipeResults2) {
-                  
-                var secondRecipe = [];
-                secondRecipe.push(recipeResults2);
-                console.log(secondRecipe);
-              $scope.recipe2 = secondRecipe;
-              $scope.secondIngredients = recipeResults2[0];
-               
-    
-            })
-
-            homeService.getRecipe(third).then(function (recipeResults3) {
-                  
-                var thirdRecipe = [];
-                thirdRecipe.push(recipeResults3);
-                console.log(thirdRecipe);
-              $scope.recipe1 = thirdRecipe;
-              $scope.thirdIngredients = recipeResults3[0];
-               
-    
-            })
-          
 
 
 
@@ -111,6 +109,50 @@ app.controller('homeController', function ($scope, homeService, $firebase) {
 
 
 });
+
+
+            
+           
+     //        homeService.getRecipe(first).then(function (recipeResults1) {
+                  
+     //            var firstRecipe = [];
+                // firstRecipe.push(recipeResults1)
+     //            console.log('recipeResults1: ',recipeResults1)
+           //    $scope.recipe1 = firstRecipe
+     //          $scope.firstIngredients = recipeResults1[0]
+               
+    
+     //        })
+
+     //        homeService.getRecipe(second).then(function (recipeResults2) {
+                  
+     //            var secondRecipe = [];
+     //            secondRecipe.push(recipeResults2);
+     //            console.log('recipeResults2: ', recipeResults2);
+     //          $scope.recipe2 = secondRecipe;
+     //          $scope.secondIngredients = recipeResults2[0];
+               
+    
+     //        })
+
+     //        homeService.getRecipe(third).then(function (recipeResults3) {
+                  
+     //            var thirdRecipe = [];
+     //            thirdRecipe.push(recipeResults3);
+     //            console.log('recipeResults3: ', recipeResults3);
+     //          $scope.recipe1 = thirdRecipe;
+     //          $scope.thirdIngredients = recipeResults3[0];
+               
+    
+     //        })
+          
+
+
+
+
+
+
+
  
             // {firstIngredients:recipeInfo[0], firstInstructions: recipeInfo[1], firstImage: recipeInfo[2],
             //                      firstServings: recipeInfo[3], firstTime: recipeInfo[4], firstTitle: recipeInfo[5],

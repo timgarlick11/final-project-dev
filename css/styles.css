@@ -27,7 +27,7 @@ margin: 0;
  }
 
  .firstIngredients {
-/**/
+
 	width: 100%;
 	height: 100%;
 	overflow: auto;
@@ -41,9 +41,7 @@ float: left;
  position:relative;
 height: 175px;
 width: 150px;
-
-  box-shadow: 0 0 5px hsla(0,0%,17%,1);
-
+box-shadow: 0 0 5px hsla(0,0%,17%,1);
 border-width: 1px;
 
  color: black;
@@ -111,6 +109,11 @@ overflow: auto;
  	background-color: hsla(174,27%,52%,1);
  	
  }
+ .userSearch {
+  width: 50%;
+margin: 0 auto;
+  
+}
 .col-sm-6.col-md-4 {
 	-webkit-perspective: 800;
   position: relative;
@@ -165,7 +168,7 @@ body {
 
 .flip-container {
 border-radius: 5px;
-  height: 90%;
+  height: 60%;
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -222,7 +225,7 @@ border-radius: 5px;
     z-index: 99;
 }
 
-.card2 {
+/*.card2 {
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
 }
 .card2:hover {
@@ -232,9 +235,9 @@ border-radius: 5px;
   -webkit-perspective: 800;
    width: 300px;
    height: 400px;
-/*  position: relative;
+  position: relative;
    left: 480px;
-   bottom: 350px;*/
+   bottom: 350px;
    display: flex;
    justify-content: center;
 
@@ -335,7 +338,7 @@ border-radius: 5px;
     cursor: pointer;
     border: 1px solid transparent;
     z-index: 99;
-}
+}*/
 
 /*
 
