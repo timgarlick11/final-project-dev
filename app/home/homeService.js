@@ -48,9 +48,9 @@ this.getRecipe = function(recipeID) {
 
 this.firebaseData = function() {
 	var firebaseUrl = 'https://food-calendar.firebaseio.com/recipes';
-var ref = new Firebase(firebaseUrl);
-var sync = $firebase(ref);
-return sync;
+	var ref = new Firebase(firebaseUrl);
+	var sync = $firebase(ref);
+	return sync;
 
 }
 
