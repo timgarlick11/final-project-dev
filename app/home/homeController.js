@@ -16,6 +16,61 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
             // var firstRecipe = [];
             // var secondRecipe = [];
             // var thirdRecipe = []
+                         $scope.addRecipe = function (day, recipeId) {
+           
+                  homeService.addData('monday',recipeId)
+                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+                var ref = new Firebase(firebaseUrl);
+                var dateRef = $firebase(ref.child(day)).$asArray();
+                    
+                    dateRef.$loaded().then(function (results) {
+                        
+                        var recipeId = ((results[results.length -1]).$value)
+                        console.log(recipeId)
+                        homeService.getRecipe(recipeId).then(function (recipeResults) {
+                        console.log('recipeResults1: ',recipeResults[2]);
+                        $scope.imageTest = recipeResults;
+                })
+                        
+               })
+            
+                    
+    
+
+ }
+
+            $scope.monday = function(recipeId) {
+
+                homeService.addData('monday',recipeId)
+
+                  
+               
+            }
+             $scope.tuesday = function(recipeId) {
+
+                homeService.addData('tuesday',recipeId)
+            }
+             $scope.wednesday = function(recipeId) {
+
+                homeService.addData('wednesday',recipeId)
+            }
+             $scope.thursday = function(recipeId) {
+
+                homeService.addData('thursday',recipeId)
+            }
+             $scope.friday = function(recipeId) {
+
+                homeService.addData('friday',recipeId)
+            }
+             $scope.saturday = function(recipeId) {
+
+                homeService.addData('saturday',recipeId)
+            }
+             $scope.sunday = function(recipeId) {
+
+                homeService.addData('sunday',recipeId)
+            }
+
 
             $scope.enterKey = function(keyEvent) {
                 if (keyEvent.which === 13) {
@@ -67,47 +122,37 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
                 })
             }
 
-
-
-
-            var newData = function (day) {
-                var firebaseUrl = 'https://food-calendar.firebaseio.com/recipes';
-                var ref = new Firebase(firebaseUrl);
-                var dateRef = $firebase(ref.child('days').child('monday')).$asArray(); //inside child used to hold the value of $scope.date
- 
-                dateRef.$loaded().then(function (results) {
-                    console.log(results)
-                    dateRef.$add('name');
-                    // console.log(dateRef)
-                    $scope.recipes = dateRef;
-                });
- 
-            }
-               
         })
   
     };
-  
-   $scope.loadRecipes = function (tester) {
-   console.log(tester)
+
+
+    var loadRecipes = function (day) {
+           
+                
                 var firebaseUrl = 'https://food-calendar.firebaseio.com/';
                 var ref = new Firebase(firebaseUrl);
-                var dateRef = $firebase(ref.child('dates').child('monday')).$asArray();
-             
-                dateRef.$loaded().then(function (results) {
-                    // console.log(results)
-                    // console.log(dateRef)
-                  homeService.getRecipe(results[0].$value).then(function (data) {
-                    // console.log(data[2])
-                    $scope.image = data[2] });
-           
-	 });
+                var dateRef = $firebase(ref.child(day)).$asArray();
+                    
+                    dateRef.$loaded().then(function (results) {
+                        
+                        var recipeId = ((results[results.length -1]).$value)
+                        console.log(recipeId)
+                        homeService.getRecipe(recipeId).then(function (recipeResults) {
+                        console.log('recipeResults1: ',recipeResults[2]);
+                        $scope.imageTest = recipeResults;
+                })
+                        
+               })
+            
+                    
+    
 
  }
+loadRecipes('monday')
 
 
-
-
+  
 });
 
 

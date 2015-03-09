@@ -32,12 +32,12 @@ this.getRecipe = function(recipeID) {
 		url:'http://api.bigoven.com/recipe/' + recipeID + '?api_key=dvx51ehi7INBAt70is6nz04gOvJmD4lt'
 
 	}).then(function(recipeResults) {
-		// console.log(recipeResults)
+		console.log(recipeResults)
 		var firstRecipeResultsArr = 
 	   [recipeResults.data.Ingredients, recipeResults.data.Instructions, 
 		recipeResults.data.ImageURL, recipeResults.data.YieldNumber, 
 		recipeResults.data.TotalMinutes, recipeResults.data.Title, 
-		recipeResults.data.ReviewCount, recipeResults.data.StarRating, recipeResults.data.WebURL];
+		recipeResults.data.ReviewCount, recipeResults.data.StarRating, recipeResults.data.WebURL, recipeResults.data.RecipeID];
 		
 		deferred.resolve(firstRecipeResultsArr)
 	})
@@ -55,6 +55,39 @@ this.firebaseData = function() {
 }
 
 
+  this.addData = function (day, recipeId) {
+                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+                var ref = new Firebase(firebaseUrl);
+                var dateRef = $firebase(ref.child(day)).$asArray(); //inside child used to hold the value of $scope.date
+ 				dateRef.$add(recipeId)
+ 				
+
+
+
+            }
+
+ //   this.loadRecipes = function (day) {
+ //   			var deferred = $q.defer()
+ //                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+ //                var ref = new Firebase(firebaseUrl);
+ //                var dateRef = $firebase(ref.child(day)).$asArray();
+                	
+ //                	dateRef.$loaded().then(function (results) {
+                 		
+ //                 		var recipeId = ((results[results.length -1]).$value)
+ //                 		console.log(recipeId)
+                 		
+ //               })
+			
+    				
+	
+
+ // }
+
+
+
+    
+
 
 })
 
@@ -64,14 +97,3 @@ this.firebaseData = function() {
 
 
 
-// this.getFirebase = function() {
-// var myObj = {};
-// ref.on("value", function(snapshot) {
-//   console.log('snapshot: ', snapshot.val());  // Alerts "San Francisco"
-//   myObj = snapshot.val();
-// });
-// ref.child('-JjWvhaijSjGkxSsmVzs').child('firstImage').on("value", function(snapshot) {
-//   console.log('snapshot: ', snapshot.val());  // Alerts "San Francisco"
-//   myObj = snapshot.val();
-// });
-// }

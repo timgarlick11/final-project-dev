@@ -64,7 +64,7 @@
     </div>
   </div>-->
   <div class='day-container'>
-  <div class='day one_breafast'></div>
+  <div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
 	<div class='day two_breafast'></div>
 	<div class='day three_breafast'></div>
 	<div class='day four_breafast'></div>
@@ -86,19 +86,29 @@
  <div class='flip-container'>
 
 <div class="flip" ng-repeat="recipe in recipes"> 
-        <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
+        <div class="card" ng-class="{'flipped':isFlipped}" > 
             <div class="face front"> 
               <div class='secondImage'>
-                <img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{recipe[2]}}'>
+                <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{recipe[2]}}'>
               <div class='ratings'>
                 <h6>Star Rating: {{recipe[7]}}</h6>
           <h6>{{recipe[6]}}</h6>  
           <h4> Servings: {{recipe[3]}}</h4>
+          <button ng-click='monday(recipe[9])'>m</button>
+           <button ng-click='tuesday(recipe[9])'>t</button>
+            <button ng-click='wednesday(recipe[9])'>w</button>
+             <button ng-click='thursday(recipe[9])'>th</button>
+              <button ng-click='friday(recipe[9])'>f</button>
+               <button ng-click='saturday(recipe[9])'>s</button>
+                <button ng-click='sunday(recipe[9])'>su</button>
+
+          
+            <button ng-click='addRecipe("monday", recipe[9])'>Add to calendar</button>
         </div>
               </div>
               </div> 
                 
-                <div class="face back"> 
+                <div class="face back" ng-click="isFlipped=!isFlipped"> 
                     <div class='firstIngredients'>
             <h1 style='text-align: center;'>{{recipe[5]}}</h1>
             <h2>Ingredients</h2>
