@@ -16,6 +16,11 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
             // var firstRecipe = [];
             // var secondRecipe = [];
             // var thirdRecipe = []
+             $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+
+            
                          $scope.addRecipe = function (day, recipeId) {
            
                   homeService.addData('monday',recipeId)

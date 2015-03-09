@@ -95,8 +95,8 @@ overflow: auto;
  
 .day-container {
 
-  height:20%;
-  width:85%;
+  height:15%;
+  width:60%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

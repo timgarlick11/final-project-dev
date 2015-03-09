@@ -94,13 +94,24 @@
                 <h6>Star Rating: {{recipe[7]}}</h6>
           <h6>{{recipe[6]}}</h6>  
           <h4> Servings: {{recipe[3]}}</h4>
-          <button ng-click='monday(recipe[9])'>m</button>
+           <i class="fa fa-calendar" ng-click='toggle()'></i>
+           <div ng-show='myVar'>
+          <input type='radio' name='day' ng-model='monday' value='monday'>m
+          <input type='radio' name='day' ng-model='tuesday' value='tuesday'>t
+          <input type='radio' name='day' ng-model='wednesday' value='wednesday'>w
+          <input type='radio' name='day' ng-model='thursday' value='thursday'>th
+          <input type='radio' name='day' ng-model='friday' value='friday'>f
+          <input type='radio' name='day' ng-model='saturday' value='saturday'>s
+          <input type='radio' name='day' ng-model='sunday' value='sunday'>su
+        </div>
+          <!-- <button ng-click='monday(recipe[9])'>m</button>
            <button ng-click='tuesday(recipe[9])'>t</button>
             <button ng-click='wednesday(recipe[9])'>w</button>
              <button ng-click='thursday(recipe[9])'>th</button>
               <button ng-click='friday(recipe[9])'>f</button>
                <button ng-click='saturday(recipe[9])'>s</button>
-                <button ng-click='sunday(recipe[9])'>su</button>
+                <button ng-click='sunday(recipe[9])'>su</button> -->
+               
 
           
             <button ng-click='addRecipe("monday", recipe[9])'>Add to calendar</button>
