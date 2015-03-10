@@ -16,29 +16,43 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
             // var firstRecipe = [];
             // var secondRecipe = [];
             // var thirdRecipe = []
+
+                //    homeService.addData('monday',recipeId)
+               //  var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+               //  var ref = new Firebase(firebaseUrl);
+               //  var dateRef = $firebase(ref.child(day)).$asArray();
+                    
+               //      dateRef.$loaded().then(function (results) {
+                        
+               //          var recipeId = ((results[results.length -1]).$value)
+               //          console.log(recipeId)
+                //         homeService.getRecipe(recipeId).then(function (recipeResults) {
+                //         console.log('recipeResults1: ',recipeResults[2]);
+                //         $scope.imageTest = recipeResults;
+                // })
+ 
+               // })
+
+
+
+
+
+
              $scope.toggle = function() {
         $scope.myVar = !$scope.myVar;
     };
 
-            
+
                          $scope.addRecipe = function (day, recipeId) {
-           
-                  homeService.addData('monday',recipeId)
-                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-                var ref = new Firebase(firebaseUrl);
-                var dateRef = $firebase(ref.child(day)).$asArray();
-                    
-                    dateRef.$loaded().then(function (results) {
-                        
-                        var recipeId = ((results[results.length -1]).$value)
-                        console.log(recipeId)
-                        homeService.getRecipe(recipeId).then(function (recipeResults) {
+    console.log(day)
+    console.log(recipeId)
+                            homeService.addData(day, recipeId)
+              
+
+                 homeService.getRecipe(recipeId).then(function (recipeResults) {
                         console.log('recipeResults1: ',recipeResults[2]);
                         $scope.imageTest = recipeResults;
                 })
-                        
-               })
-            
                     
     
 
@@ -132,35 +146,37 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
     };
 
 
-    var loadRecipes = function (day) {
-           
-                
-                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-                var ref = new Firebase(firebaseUrl);
-                var dateRef = $firebase(ref.child(day)).$asArray();
-                    
-                    dateRef.$loaded().then(function (results) {
-                        
-                        var recipeId = ((results[results.length -1]).$value)
-                        console.log(recipeId)
-                        homeService.getRecipe(recipeId).then(function (recipeResults) {
-                        console.log('recipeResults1: ',recipeResults[2]);
-                        $scope.imageTest = recipeResults;
-                })
-                        
-               })
-            
-                    
-    
+var testing = homeService.loadRecipes('monday')
 
- }
-loadRecipes('monday')
-
+console.log(testing)
 
   
 });
 
 
+//     var loadRecipes = function (day) {
+           
+                
+//                 var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+//                 var ref = new Firebase(firebaseUrl);
+//                 var dateRef = $firebase(ref.child(day)).$asArray();
+                    
+//                     dateRef.$loaded().then(function (results) {
+                        
+//                         var recipeId = ((results[results.length -1]).$value)
+//                         console.log(recipeId)
+//                         homeService.getRecipe(recipeId).then(function (recipeResults) {
+//                         console.log('recipeResults1: ',recipeResults[2]);
+//                         $scope.imageTest = recipeResults;
+//                 })
+                        
+//                })
+            
+                    
+    
+
+//  }
+// loadRecipes('monday')
             
            
      //        homeService.getRecipe(first).then(function (recipeResults1) {

@@ -65,12 +65,12 @@
   </div>-->
   <div class='day-container'>
   <div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day two_breafast'></div>
-	<div class='day three_breafast'></div>
-	<div class='day four_breafast'></div>
-	<div class='day five_breafast'></div>
-	<div class='day six_breafast'></div>
-	<div class='day seven_breafast'></div>
+	<div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
+	<div class='day three_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
+	<div class='day four_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
+	<div class='day five_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
+	<div class='day six_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
+	<div class='day seven_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
   </div>
  
 <!-- <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
@@ -95,26 +95,23 @@
           <h6>{{recipe[6]}}</h6>  
           <h4> Servings: {{recipe[3]}}</h4>
            <i class="fa fa-calendar" ng-click='toggle()'></i>
-           <div ng-show='myVar'>
-          <input type='radio' name='day' ng-model='monday' value='monday'>m
-          <input type='radio' name='day' ng-model='tuesday' value='tuesday'>t
-          <input type='radio' name='day' ng-model='wednesday' value='wednesday'>w
-          <input type='radio' name='day' ng-model='thursday' value='thursday'>th
-          <input type='radio' name='day' ng-model='friday' value='friday'>f
-          <input type='radio' name='day' ng-model='saturday' value='saturday'>s
-          <input type='radio' name='day' ng-model='sunday' value='sunday'>su
+        <div ng-show='myVar'>
+                   <form>
+                      <input type='radio' name='day' ng-model='day' value='monday'>m
+                      <input type='radio' name='day' ng-model='day' value='tuesday'>t
+                      <input type='radio' name='day' ng-model='day' value='wednesday'>w
+                      <input type='radio' name='day' ng-model='day' value='thursday'>th
+                      <input type='radio' name='day' ng-model='day' value='friday'>f
+                      <input type='radio' name='day' ng-model='day' value='saturday'>s
+                      <input type='radio' name='day' ng-model='day' value='sunday'>su
+                    <tt>day = {{day | json}}</tt><br/>
+</form>
         </div>
-          <!-- <button ng-click='monday(recipe[9])'>m</button>
-           <button ng-click='tuesday(recipe[9])'>t</button>
-            <button ng-click='wednesday(recipe[9])'>w</button>
-             <button ng-click='thursday(recipe[9])'>th</button>
-              <button ng-click='friday(recipe[9])'>f</button>
-               <button ng-click='saturday(recipe[9])'>s</button>
-                <button ng-click='sunday(recipe[9])'>su</button> -->
+
                
 
           
-            <button ng-click='addRecipe("monday", recipe[9])'>Add to calendar</button>
+            <button ng-click='addRecipe(day, recipe[9])'>Add to calendar</button> <!-- the day in addRecipe is the value stored on the ng-model from the radio button value above -->
         </div>
               </div>
               </div> 

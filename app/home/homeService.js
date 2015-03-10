@@ -66,23 +66,23 @@ this.firebaseData = function() {
 
             }
 
- //   this.loadRecipes = function (day) {
- //   			var deferred = $q.defer()
- //                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
- //                var ref = new Firebase(firebaseUrl);
- //                var dateRef = $firebase(ref.child(day)).$asArray();
+   this.loadRecipes = function (day) {
+   			
+                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+                var ref = new Firebase(firebaseUrl);
+                var dateRef = $firebase(ref.child(day)).$asArray();
                 	
- //                	dateRef.$loaded().then(function (results) {
+                	dateRef.$loaded().then(function (results) {
                  		
- //                 		var recipeId = ((results[results.length -1]).$value)
- //                 		console.log(recipeId)
+                 		var recipeId = ((results[results.length -1]).$value)
+                 		console.log(recipeId)
                  		
- //               })
+               })
 			
     				
 	
 
- // }
+ }
 
 
 
@@ -92,8 +92,15 @@ this.firebaseData = function() {
 })
 
 
-
-
-
-
+               //  var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+               //  var ref = new Firebase(firebaseUrl);
+               //  var dateRef = $firebase(ref.child(day)).$asArray();
+                    
+               //      dateRef.$loaded().then(function (results) {
+                        
+               //          var recipeId = ((results[results.length -1]).$value)
+               //          console.log(recipeId)
+               
+                        
+               // })
 
