@@ -13,109 +13,45 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
     //         homeService.getRecipe(id).then(function (recipeResults) {
     //         return recipeResults
     //     } } 
-            // var firstRecipe = [];
-            // var secondRecipe = [];
-            // var thirdRecipe = []
-
-                //    homeService.addData('monday',recipeId)
-               //  var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-               //  var ref = new Firebase(firebaseUrl);
-               //  var dateRef = $firebase(ref.child(day)).$asArray();
-                    
-               //      dateRef.$loaded().then(function (results) {
-                        
-               //          var recipeId = ((results[results.length -1]).$value)
-               //          console.log(recipeId)
-                //         homeService.getRecipe(recipeId).then(function (recipeResults) {
-                //         console.log('recipeResults1: ',recipeResults[2]);
-                //         $scope.imageTest = recipeResults;
-                // })
- 
-               // })
 
 
 
 
 
+    $scope.addRecipe = function (day, recipeId) {
+        console.log(day)
+        console.log(recipeId)
+        homeService.addData(day, recipeId)
 
-             $scope.toggle = function() {
-        $scope.myVar = !$scope.myVar;
+            homeService.getRecipe(recipeId).then(function (recipeResults) {
+                console.log('recipeResults1: ',recipeResults[2]);
+                $scope.imageTest = recipeResults;
+            });
     };
 
 
-                         $scope.addRecipe = function (day, recipeId) {
-    console.log(day)
-    console.log(recipeId)
-                            homeService.addData(day, recipeId)
-              
 
-                 homeService.getRecipe(recipeId).then(function (recipeResults) {
-                        console.log('recipeResults1: ',recipeResults[2]);
-                        $scope.imageTest = recipeResults;
-                })
-                    
-    
-
- }
-
-            $scope.monday = function(recipeId) {
-
-                homeService.addData('monday',recipeId)
-
-                  
-               
-            }
-             $scope.tuesday = function(recipeId) {
-
-                homeService.addData('tuesday',recipeId)
-            }
-             $scope.wednesday = function(recipeId) {
-
-                homeService.addData('wednesday',recipeId)
-            }
-             $scope.thursday = function(recipeId) {
-
-                homeService.addData('thursday',recipeId)
-            }
-             $scope.friday = function(recipeId) {
-
-                homeService.addData('friday',recipeId)
-            }
-             $scope.saturday = function(recipeId) {
-
-                homeService.addData('saturday',recipeId)
-            }
-             $scope.sunday = function(recipeId) {
-
-                homeService.addData('sunday',recipeId)
-            }
-
-
-            $scope.enterKey = function(keyEvent) {
-                if (keyEvent.which === 13) {
-                       homeService.getData($scope.searchRecipe).then(function (resultArr) {
-      
+    $scope.enterKey = function(keyEvent) {
+        if (keyEvent.which === 13) {
             
-          
+            homeService.getData($scope.searchRecipe).then(function (resultArr) {
             $scope.searchRecipe = '';
+
             
-            // getRecipe(resultsArr[i]);
-            //don't call this here. getRecipe instead. Cleaner.
-            //take the results from that call and push them in a common $scope.recipes array. Then Ng-repeat over that.
-            //push all the receipes into a common array
-            //then ng-repeat over thoser receipes to avoid duplicating code like below =)
-            $scope.recipes = [];
-            for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
-                homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
-                    console.log('recipeResults1: ',recipeResults);
-                  $scope.recipes.push(recipeResults);
-                }, function(err) {
-                    console.log('FAILED!!!: ', err);
-                })
-            }
-        })
-    }
-}
+                $scope.recipes = [];
+                for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
+                
+                    homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
+                        console.log('recipeResults1: ',recipeResults);
+                        $scope.recipes.push(recipeResults);
+                
+                    }, function(err) {
+                            console.log('FAILED!!!: ', err);
+                        })
+                }
+            })
+        }   
+    };
 
            
     $scope.submitQuery = function () {
@@ -123,62 +59,51 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
            
         homeService.getData($scope.searchRecipe).then(function (resultArr) {
        
-          
-            $scope.searchRecipe = '';
+          $scope.searchRecipe = '';
  			
-            // getRecipe(resultsArr[i]);
-            //don't call this here. getRecipe instead. Cleaner.
-            //take the results from that call and push them in a common $scope.recipes array. Then Ng-repeat over that.
-            //push all the receipes into a common array
-            //then ng-repeat over thoser receipes to avoid duplicating code like below =)
             $scope.recipes = [];
             for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
+                
                 homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
                     console.log('recipeResults1: ',recipeResults);
-                  $scope.recipes.push(recipeResults);
+                    $scope.recipes.push(recipeResults);
+                
                 }, function(err) {
                     console.log('FAILED!!!: ', err);
-                })
+                    })
             }
-
         })
-  
     };
-
-
-var testing = homeService.loadRecipes('monday')
-
-console.log(testing)
-
-  
-});
-
-
-//     var loadRecipes = function (day) {
-           
+             
+    var loadRecipes = function (day) {
+            
+        var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+        var ref = new Firebase(firebaseUrl);
+        var dateRef = $firebase(ref.child(day)).$asArray();
+        
+        dateRef.$loaded().then(function (results) {
+                        
+            var recipeId = ((results[results.length -1]).$value)
+            console.log(recipeId)
                 
-//                 var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-//                 var ref = new Firebase(firebaseUrl);
-//                 var dateRef = $firebase(ref.child(day)).$asArray();
-                    
-//                     dateRef.$loaded().then(function (results) {
-                        
-//                         var recipeId = ((results[results.length -1]).$value)
-//                         console.log(recipeId)
-//                         homeService.getRecipe(recipeId).then(function (recipeResults) {
-//                         console.log('recipeResults1: ',recipeResults[2]);
-//                         $scope.imageTest = recipeResults;
-//                 })
-                        
-//                })
-            
-                    
-    
+                homeService.getRecipe(recipeId).then(function(recipeResults) {
+                    $scope.imageTest = recipeResults;
 
-//  }
-// loadRecipes('monday')
+                })
+        })
+    }               
+        loadRecipes('tuesday')              
             
-           
+
+
+});
+            
+           // 3 questions,
+
+
+           // how do I refactor my code to when I push on the calendar button it only opens up that options on that specific card?
+           // how do I refactor my code so when I click a day of the week and push 'add to calendar' It adds it to that specific div
+           // how do I refactor my code so that my load recipes takes place in firebase I just envoke it in my controller?
      //        homeService.getRecipe(first).then(function (recipeResults1) {
                   
      //            var firstRecipe = [];

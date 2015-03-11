@@ -6,10 +6,10 @@ margin: 0;
 
 
 }
-/** {
+* {
   border: 1px solid black;
   box-sizing: border-box;
-}*/
+}
 .nav {
 
 	background-color:
@@ -66,6 +66,7 @@ box-shadow: 0 0 2px hsla(0,0%,17%,1);
 
 
 }
+
 
  .secondInstructions{
  width: 40%;
@@ -224,6 +225,26 @@ border-radius: 5px;
     border: 1px solid transparent;
     z-index: 99;
 }
+/*i {
+  position: relative;
+  left: 100px;
+
+}*/
+.icons {
+  margin: 10px auto;
+  width: 50%;
+ display: flex;
+ justify-content: space-between;
+}
+
+.weekDays {
+width: 70%;
+ margin: 0 auto;
+
+}
+.calendarButton {
+ margin:0 auto;
+}
 
 /*.card2 {
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
@@ -338,7 +359,9 @@ border-radius: 5px;
     cursor: pointer;
     border: 1px solid transparent;
     z-index: 99;
-}*/
+}
+
+
 
 /*
 

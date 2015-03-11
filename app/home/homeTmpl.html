@@ -65,7 +65,7 @@
   </div>-->
   <div class='day-container'>
   <div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
+	<div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{image2Test[2]}}'></div>
 	<div class='day three_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
 	<div class='day four_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
 	<div class='day five_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
@@ -76,58 +76,60 @@
 <!-- <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
 				
 <div class='userSearch'>
-
-<input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe' placeholder='search recipe' ng-keypress='enterKey($event)' >
-<button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
-
+  <input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search recipe' ng-keypress='enterKey($event)'>
+  <button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
 </div>
 					<!-- <button ng-click='newData(Monday)'>Monday</button>
 					<button ng-click='newData("Tuesday")'>Tuesday</button> -->
- <div class='flip-container'>
-
-<div class="flip" ng-repeat="recipe in recipes"> 
-        <div class="card" ng-class="{'flipped':isFlipped}" > 
-            <div class="face front"> 
-              <div class='secondImage'>
-                <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{recipe[2]}}'>
-              <div class='ratings'>
-                <h6>Star Rating: {{recipe[7]}}</h6>
+           <!--       <h6>Star Rating: {{recipe[7]}}</h6>
           <h6>{{recipe[6]}}</h6>  
-          <h4> Servings: {{recipe[3]}}</h4>
-           <i class="fa fa-calendar" ng-click='toggle()'></i>
-        <div ng-show='myVar'>
-                   <form>
-                      <input type='radio' name='day' ng-model='day' value='monday'>m
-                      <input type='radio' name='day' ng-model='day' value='tuesday'>t
-                      <input type='radio' name='day' ng-model='day' value='wednesday'>w
-                      <input type='radio' name='day' ng-model='day' value='thursday'>th
-                      <input type='radio' name='day' ng-model='day' value='friday'>f
-                      <input type='radio' name='day' ng-model='day' value='saturday'>s
-                      <input type='radio' name='day' ng-model='day' value='sunday'>su
-                    <tt>day = {{day | json}}</tt><br/>
-</form>
-        </div>
+          <h4> Servings: {{recipe[3]}}</h4> -->
 
-               
-
-          
-            <button ng-click='addRecipe(day, recipe[9])'>Add to calendar</button> <!-- the day in addRecipe is the value stored on the ng-model from the radio button value above -->
-        </div>
+<div class='flip-container'>
+  <div class="flip" ng-repeat="recipe in recipes"> 
+    <div class="card" ng-class="{'flipped':isFlipped}" > 
+      <div class="face front"> 
+        <div class='secondImage'>
+              <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
+                  ng-src='{{recipe[2]}}'>
+          <div class='ratings'>
+            <div class='icons'>
+             <i class="fa fa-heart fa-2x"></i>
+             <i class="fa fa-calendar fa-2x" ng-click='myVar = !myVar'></i>
+             <i class="fa fa-shopping-cart fa-2x"></i>
+            </div>
+              <div class='weekDays' ng-show='myVar'>
+                <form>
+                  <input type='radio' name='day' ng-model='day' value='monday'>m
+                  <input type='radio' name='day' ng-model='day' value='tuesday'>t
+                  <input type='radio' name='day' ng-model='day' value='wednesday'>w
+                  <input type='radio' name='day' ng-model='day' value='thursday'>th
+                  <input type='radio' name='day' ng-model='day' value='friday'>f
+                  <input type='radio' name='day' ng-model='day' value='saturday'>s
+                  <input type='radio' name='day' ng-model='day' value='sunday'>su
+                </form>
+                  <div class='calendarButton'>
+                    <button class='btn btn-default btn-number'  ng-click='addRecipe(day, recipe[9])'>
+                      <span>Add {{day}}</span>
+                    </button> <!-- the day in addRecipe is the value stored on the ng-model from the radio button value above -->
+                  </div>
               </div>
-              </div> 
-                
-                <div class="face back" ng-click="isFlipped=!isFlipped"> 
-                    <div class='firstIngredients'>
+          </div>
+        </div>
+      </div> 
+        <div class="face back" ng-click="isFlipped=!isFlipped"> 
+          <div class='firstIngredients'>
             <h1 style='text-align: center;'>{{recipe[5]}}</h1>
             <h2>Ingredients</h2>
-          <ul ng-repeat='firstItems in recipe[0]'>
-            <li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
-          </ul>
-        </div>
-            </div> 
-        </div> 
+            <ul ng-repeat='firstItems in recipe[0]'>
+              <li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
+            </ul>
+          </div>
+        </div>        
     </div> 
-
+  </div> 
+</div>    
+ 
   <!-- <div class="flip"> 
         <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
             <div class="face front"> 
@@ -203,7 +205,7 @@
         </div> 
     </div>  -->
 
-</div>
+
 
 
 <div ng-repeat='test in recipe1'>
