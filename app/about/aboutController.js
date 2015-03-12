@@ -3,5 +3,66 @@ var app = angular.module('theHomeLife')
 app.controller('aboutController', function($scope, homeService, $firebase) {
 
 
+    
+    // homeService.loadRecipes('monday').then(function(recipeId) {
+
+    //     homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest = recipeResults[2]
+        
+    //     })
+    // })        
+            
+    // homeService.loadRecipes('tuesday').then(function(recipeId) {
+
+    //     homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest2 = recipeResults[2]
+        
+    //     })
+    // })  
+
+
+    // homeService.loadRecipes('wednesday').then(function(recipeId) {
+
+    //     homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest3 = recipeResults[2]
+        
+    //     })
+    // })  
+
+    // homeService.loadRecipes('thursday').then(function(recipeId) {
+       
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest4 = recipeResults[2]
+    //         })
+    // })
+
+    // homeService.loadRecipes('friday').then(function(recipeId) {
+       
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest5 = recipeResults[2]
+    //         })
+    // })  
+      
+    // homeService.loadRecipes('saturday').then(function(recipeId) {
+       
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest6 = recipeResults[2]
+    //         })
+    // })  
+
+    // homeService.loadRecipes('sunday').then(function(recipeId) {
+       
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest7 = recipeResults[2]
+    //         })
+    // }) 
+
  
 })

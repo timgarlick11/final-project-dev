@@ -1,83 +1,24 @@
 
-
-<!-- <button ng-click='addData(firstIngredients)'>test</button>
-<button ng-click='moveData'>test2</button> -->
-
-<!-- 
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <a href='{{firstUrl}}'>
-   
-      <img ng-src="{{firstImage}}">
-  	</a>
-      <div class="caption" style='text-align: center'>
-        <h3>{{firstTitle}}</h3>
-        <p>add it to your calendar</p>
-       <div class='requestButtons'>
-       <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
-        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
-         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
-         <button class="btn btn-primary" role="button">Sun</button>
-      	</div>
-      </div>
-    </div>
-            
-  </div>
-
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-        <a href='{{secondUrl}}'>
-      <img ng-src='{{secondImage}}'>
-  	</a>
-      <div class="caption" style='text-align: center'>
-        <h3>{{secondTitle}}</h3>
-        <p>add it to your calendar</p>
-      <div class='requestButtons'> <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
-        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
-         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
-         <button class="btn btn-primary" role="button">Sun</button>
-       </div>
-      </div>
-      </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-        <a href='{{thirdUrl}}'>
-      <img ng-src='{{thirdImage}}'>
-  	</a>
-      <div class="caption" style='text-align: center'>
-        <h3>{{thirdTitle}}</h3>
-        <p>add it to your calendar</p>
-        <div class='requestButtons'>
-        <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
-        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
-         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
-         <button class="btn btn-primary" role="button">Sun</button>
-      </div>
-      </div>ng-src="{{preLoad}}" || 
-    </div>
-  </div>-->
-  <div class='day-container'>
-  <div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{image2Test[2]}}'></div>
-	<div class='day three_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day four_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day five_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day six_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-	<div class='day seven_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest[2]}}'></div>
-  </div>
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#/">Home</a></li>
+  <li role="presentation"><a href="#/about">Calendar</a></li>
+  <li role="presentation"><a href="#/contact">Favorites</a></li>
+</ul>
+<!--   <div class='day-container'>
+    <div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
+    <div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
+    <div class='day three_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
+    <div class='day four_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
+    <div class='day five_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest5}}'></div>
+    <div class='day six_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest6}}'></div>
+    <div class='day seven_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest7}}'></div>
+  </div> -->
  
 <!-- <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
 				
-<div class='userSearch'>
+<div class='userSearch' ng-hide='tester'>
   <input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search recipe' ng-keypress='enterKey($event)'>
-  <button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
+  <button class='btn btn-default' ng-click='tester = !tester'>Submit</button>
 </div>
 					<!-- <button ng-click='newData(Monday)'>Monday</button>
 					<button ng-click='newData("Tuesday")'>Tuesday</button> -->
@@ -114,6 +55,9 @@
                     </button> <!-- the day in addRecipe is the value stored on the ng-model from the radio button value above -->
                   </div>
               </div>
+                <div class='stars'>
+                  <star-rating rating='recipe[7]'></star-rating>
+                </div>
           </div>
         </div>
       </div> 
@@ -129,7 +73,87 @@
     </div> 
   </div> 
 </div>    
- 
+
+  
+
+
+
+
+
+
+
+<!-- <button ng-click='addData(firstIngredients)'>test</button>
+<button ng-click='moveData'>test2</button> -->
+
+<!-- 
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a href='{{firstUrl}}'>
+   
+      <img ng-src="{{firstImage}}">
+    </a>
+      <div class="caption" style='text-align: center'>
+        <h3>{{firstTitle}}</h3>
+        <p>add it to your calendar</p>
+       <div class='requestButtons'>
+       <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
+        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
+         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
+         <button class="btn btn-primary" role="button">Sun</button>
+        </div>
+      </div>
+    </div>
+            
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        <a href='{{secondUrl}}'>
+      <img ng-src='{{secondImage}}'>
+    </a>
+      <div class="caption" style='text-align: center'>
+        <h3>{{secondTitle}}</h3>
+        <p>add it to your calendar</p>
+      <div class='requestButtons'> <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
+        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
+         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
+         <button class="btn btn-primary" role="button">Sun</button>
+       </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        <a href='{{thirdUrl}}'>
+      <img ng-src='{{thirdImage}}'>
+    </a>
+      <div class="caption" style='text-align: center'>
+        <h3>{{thirdTitle}}</h3>
+        <p>add it to your calendar</p>
+        <div class='requestButtons'>
+        <button class="btn btn-primary" role="button">Mon</button> <button class="btn btn-default" role="button">Tu</button>
+        <button class="btn btn-primary" role="button">Wed</button> <button class="btn btn-default" role="button">TH</button>
+         <button class="btn btn-primary" role="button">Fri</button> <button class="btn btn-default" role="button">Sat</button>
+         <button class="btn btn-primary" role="button">Sun</button>
+      </div>
+      </div>ng-src="{{preLoad}}" || 
+    </div>
+  </div>-->
+
+
+
+
+
+
+
+
+
   <!-- <div class="flip"> 
         <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
             <div class="face front"> 
@@ -208,9 +232,6 @@
 
 
 
-<div ng-repeat='test in recipe1'>
-  {{recipe1}}
-</div>
 
 
 

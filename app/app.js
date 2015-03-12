@@ -10,7 +10,7 @@ $routeProvider.when('/', {
 	controller: 'homeController'
 }).when('/about', {
 	templateUrl:'app/about/aboutTmpl.html',
-	controller: 'homeController'
+	controller: 'aboutController'
 
 }).when('/contact', {
 	templateUrl: 'app/contact/contactTmpl.html',

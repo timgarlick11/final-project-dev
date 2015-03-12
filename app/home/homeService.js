@@ -3,7 +3,7 @@ var app = angular.module('theHomeLife')
 
 app.service('homeService', function($http, $q, $firebase) {
   
-
+// var test = this
 
 
 this.getData = function(userSearch) {
@@ -45,30 +45,27 @@ this.getData = function(userSearch) {
 	}
 
 	this.loadRecipes = function(day) {
-		//create promise
+		var deferred = $q.defer() 
 		var firebaseUrl = 'https://food-calendar.firebaseio.com/';
 	    var ref = new Firebase(firebaseUrl);
 	    var dateRef = $firebase(ref.child(day)).$asArray();
 	                
         dateRef.$loaded().then(function (results) {
-                    
-            var recipeId = ((results[results.length -1]).$value);
-            console.log(recipeId)
-            homeService.getRecipe(recipeId).then(function(recipeResults) {
-            	//resolve promise
-                //$scope.image2Test = recipeResults;
-
-    		});
-		});
-        //return promise
+              
+           var recipeId = ((results[results.length -1]).$value);
+           console.log(recipeId)
+         	deferred.resolve(recipeId)
+		})
+        return deferred.promise
 	};
+
 
 
 
   	this.addData = function (day, recipeId) {
                 var firebaseUrl = 'https://food-calendar.firebaseio.com/';
                 var ref = new Firebase(firebaseUrl);
-                var dateRef = $firebase(ref.child(day)).$asArray(); //inside child used to hold the value of $scope.date
+                var dateRef = $firebase(ref.child(day)).$asArray(); 
  				dateRef.$add(recipeId)
  				
 	}
@@ -80,21 +77,21 @@ this.getData = function(userSearch) {
 //  	return recId;
 //  }
 
-   this.loadRecipes = function (day) {
+   // this.loadRecipes = function (day) {
    			
-        var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-        var ref = new Firebase(firebaseUrl);
-        var dateRef = $firebase(ref.child(day)).$asArray();
+   //      var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+   //      var ref = new Firebase(firebaseUrl);
+   //      var dateRef = $firebase(ref.child(day)).$asArray();
 
-            dateRef.$loaded().then(function (results) {
+   //          dateRef.$loaded().then(function (results) {
                  	
-                var recipeId = ((results[results.length -1]).$value)
-                console.log(recipeId)
-                return recipeId
+   //              var recipeId = ((results[results.length -1]).$value)
+   //              console.log(recipeId)
+   //              return recipeId
                  		
-        	})
+   //      	})
 			
-    }
+   //  }
 
 
     

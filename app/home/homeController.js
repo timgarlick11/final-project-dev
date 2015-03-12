@@ -25,7 +25,7 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
 
             homeService.getRecipe(recipeId).then(function (recipeResults) {
                 console.log('recipeResults1: ',recipeResults[2]);
-                $scope.imageTest = recipeResults;
+                $scope.imageTest = recipeResults[2];
             });
     };
 
@@ -39,15 +39,17 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
 
             
                 $scope.recipes = [];
+               
+
                 for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
                 
                     homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
                         console.log('recipeResults1: ',recipeResults);
                         $scope.recipes.push(recipeResults);
-                
+                      
                     }, function(err) {
                             console.log('FAILED!!!: ', err);
-                        })
+                       })
                 }
             })
         }   
@@ -74,26 +76,11 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
             }
         })
     };
-             
-    var loadRecipes = function (day) {
-            
-        var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-        var ref = new Firebase(firebaseUrl);
-        var dateRef = $firebase(ref.child(day)).$asArray();
-        
-        dateRef.$loaded().then(function (results) {
-                        
-            var recipeId = ((results[results.length -1]).$value)
-            console.log(recipeId)
-                
-                homeService.getRecipe(recipeId).then(function(recipeResults) {
-                    $scope.imageTest = recipeResults;
+         
 
-                })
-        })
-    }               
-        loadRecipes('tuesday')              
-            
+
+   
+
 
 
 });
@@ -104,6 +91,29 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
            // how do I refactor my code to when I push on the calendar button it only opens up that options on that specific card?
            // how do I refactor my code so when I click a day of the week and push 'add to calendar' It adds it to that specific div
            // how do I refactor my code so that my load recipes takes place in firebase I just envoke it in my controller?
+       // var loadRecipes = function (day) {
+            
+    //     var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+    //     var ref = new Firebase(firebaseUrl);
+    //     var dateRef = $firebase(ref.child(day)).$asArray();
+        
+    //     dateRef.$loaded().then(function (results) {
+                        
+    //         var recipeId = ((results[results.length -1]).$value)
+    //         console.log(recipeId)
+                
+    //             homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //                 $scope.imageTest = recipeResults;
+
+    //             })
+    //     })
+    // }               
+        // loadRecipes('tuesday') 
+
+
+
+
+
      //        homeService.getRecipe(first).then(function (recipeResults1) {
                   
      //            var firstRecipe = [];
