@@ -9,8 +9,8 @@ margin: 0;
 /** {
   border: 1px solid black;
   box-sizing: border-box;
-}*/
-.nav {
+}
+*/.nav {
 
 	background-color: 
 	hsla(12,85%,43%,.75); 
@@ -53,9 +53,11 @@ z-index: 3;
 	width: 100%;
 }
 .title {
+  position: relative;
   margin: 20px auto 0 auto;
   text-align: center;
   font-size: 30px;
+  overflow: hidden;
 }
 .ratings {
 position: absolute;
@@ -142,16 +144,16 @@ right: 275px;
 	
 	
 }
-.thumbnail {
+/*.thumbnail {
 	height: 450px;
 
 
-}
-.thumbnail > a > img {
+}*/
+/*.thumbnail > a > img {
 
 width: 60%;
 height: 50%;
-
+*/
 }
 .btn-primary  {
 	background-color: red;
@@ -195,6 +197,7 @@ border-radius: 5px;
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 .flip {
   -webkit-perspective: 800;
@@ -226,6 +229,7 @@ border-radius: 5px;
     font-family: Georgia;
     font-size: 1em;
    
+   
    /* line-height: 200px;*/
 }
 .flip .card .front {
@@ -245,6 +249,7 @@ border-radius: 5px;
     cursor: pointer;
     border: 1px solid transparent;
     z-index: 99;
+    overflow: auto;
 }
 /*i {
   position: relative;
@@ -297,6 +302,8 @@ width: 50%;
 .card2 {
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
   border-radius: 5px;
+  margin-top: 10px;
+
 
 }
 .face2 {
@@ -311,16 +318,19 @@ width: 50%;
   top: 80px;
   right: 60px;
 border-radius: 5px;
-  height: 60%;
+  height: 100%;
   width: 90%;
   margin: 20px auto;
+
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 .flip2 {
   -webkit-perspective: 800;
    width: 300px;
    height: 400px;
+     margin-bottom: 20px;
   /* position: relative;
    left: 80px;
    top: 50px;*/
@@ -366,6 +376,7 @@ border-radius: 5px;
     cursor: pointer;
     border: 1px solid transparent;
     z-index: 99;
+    overflow: auto;
 }
 
 

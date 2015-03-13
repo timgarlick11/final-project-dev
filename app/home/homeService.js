@@ -60,7 +60,23 @@ this.getData = function(userSearch) {
 	};
 
 
-
+	this.loadFavorites = function(day) {
+		var deferred = $q.defer() 
+		var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+	    var ref = new Firebase(firebaseUrl);
+	    var dateRef = $firebase(ref.child(day)).$asArray();
+	                
+        dateRef.$loaded().then(function (results) {
+              var recipeId = []
+              for (var i = 0; i < results.length; i++) {
+              	recipeId.push(results[i].$value)
+              };
+          
+           console.log(recipeId)
+         	deferred.resolve(recipeId)
+		})
+        return deferred.promise
+	};
 
   	this.addData = function (day, recipeId) {
                 var firebaseUrl = 'https://food-calendar.firebaseio.com/';

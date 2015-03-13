@@ -1,6 +1,7 @@
+
 <!-- ng-repeat="recipe in recipes" -->
 <div class='flip-container2'>
-  <div class="flip2" > 
+  <div class="flip2" ng-repeat="recipe in recipes"> 
     <div class="card2" ng-class="{'flipped':isFlipped}" > 
       <div class="face2 front2"> 
         <div class='secondImage'>
@@ -10,7 +11,7 @@
 
           <div class='ratings'>
             <div class='icons'>
-             <i class="fa fa-heart fa-2x"></i>
+             <i class="fa fa-heart fa-2x" ng-click='addRecipe("favorites", recipe[9])'></i>
              <i class="fa fa-calendar fa-2x" ng-click='myVar = !myVar'></i>
              <i class="fa fa-shopping-cart fa-2x"></i>
             </div>
@@ -47,4 +48,4 @@
         </div>        
     </div> 
   </div> 
-</div>  
+</div> 
