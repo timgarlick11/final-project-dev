@@ -10,11 +10,21 @@
 </head>
 <body ng-app='theHomeLife'>
 
+<ul class="nav nav-tabs">
+	<!-- <li role="presentation"><a href="#/">Search</a></li> -->
+  	<li role="presentation"><a href="#/home">Home</a></li>
+  	<li role="presentation"><a href="#/about">Calendar</a></li>
+  	<li role="presentation"><a href="#/contact">Favorites</a></li>
+
+</ul>
+
 <!-- <ul class="nav nav-tabs">
   <li role="presentation"><a href="#/">Home</a></li>
   <li role="presentation"><a href="#/about">Calendar</a></li>
   <li role="presentation"><a href="#/contact">Favorites</a></li>
+  
 </ul> -->
+
 
 
 <ng-view></ng-view>
@@ -29,6 +39,7 @@
 <script src='app/app.js'></script>
 <script src='app/myDirective.js'></script>
 <script src='app/starRatingDirective.js'></script>
+<script src='app/search/search,js'></script>
 <script src='app/home/homeController.js'></script>
 <script src='app/home/homeService.js'></script>
 <script src='app/about/aboutController.js'></script>

@@ -13,7 +13,21 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
     //         homeService.getRecipe(id).then(function (recipeResults) {
     //         return recipeResults
     //     } } 
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
 
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+today = mm+'/'+dd+'/'+yyyy;
+$scope.date = today
 
 
 
@@ -33,11 +47,11 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
 
     $scope.enterKey = function(keyEvent) {
         if (keyEvent.which === 13) {
-            
+             
             homeService.getData($scope.searchRecipe).then(function (resultArr) {
             $scope.searchRecipe = '';
 
-            
+           
                 $scope.recipes = [];
                
 
@@ -51,8 +65,8 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
                             console.log('FAILED!!!: ', err);
                        })
                 }
-            })
-        }   
+            })  
+        }  
     };
 
            

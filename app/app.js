@@ -8,6 +8,7 @@ $routeProvider.when('/', {
 
 	templateUrl:'app/home/homeTmpl.html',
 	controller: 'homeController'
+
 }).when('/about', {
 	templateUrl:'app/about/aboutTmpl.html',
 	controller: 'aboutController'

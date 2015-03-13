@@ -12,8 +12,8 @@ margin: 0;
 }*/
 .nav {
 
-	background-color:
-	hsla(178,76%,35%,1); 
+	background-color: 
+	hsla(12,85%,43%,.75); 
 	margin: 0;
   
 }
@@ -26,13 +26,13 @@ margin: 0;
 
  }
 
- .firstIngredients {
+/* .firstIngredients {
 
 	width: 100%;
 	height: 100%;
 	overflow: auto;
 float: left;
-}
+}*/
 
 
 
@@ -51,6 +51,11 @@ z-index: 3;
 .secondImage > img {
 	height: 100%;
 	width: 100%;
+}
+.title {
+  margin: 20px auto 0 auto;
+  text-align: center;
+  font-size: 30px;
 }
 .ratings {
 position: absolute;
@@ -122,9 +127,10 @@ overflow: auto;
  }
  .userSearch {
   width: 50%;
-  position: relative;
+  position: absolute;
 margin: 0 auto;
-top: 175px;
+top: 20px;
+right: 275px;
   
 }
 .col-sm-6.col-md-4 {
@@ -180,10 +186,13 @@ body {
 }
 
 .flip-container {
+   position: absolute;
+  top: 80px;
+  right: 60px;
 border-radius: 5px;
   height: 60%;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
 }
@@ -262,9 +271,12 @@ width: 70%;
   margin: 30px auto 0 auto;
 }
 .image {
-  position: relative;
-  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  height: 600px;
   width: 100%;
+  top: 40px;
+
   
 }
 .userSearch2 {
@@ -281,25 +293,43 @@ width: 50%;
   cursor: pointer;
 }*/
 
-/*.card2 {
+
+.card2 {
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
+  border-radius: 5px;
+
+}
+.face2 {
+  border-radius: 5px;
 }
 .card2:hover {
   box-shadow: 0 0 15px hsla(206,65%,51%,1);
+}
+
+.flip-container2 {
+   position: absolute;
+  top: 80px;
+  right: 60px;
+border-radius: 5px;
+  height: 60%;
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
 }
 .flip2 {
   -webkit-perspective: 800;
    width: 300px;
    height: 400px;
-  position: relative;
-   left: 480px;
-   bottom: 350px;
+  /* position: relative;
+   left: 80px;
+   top: 50px;*/
    display: flex;
-   justify-content: center;
+   justify-content: space-between ;
 
   
 }
-.flip2 .card2.flipped2 {
+.flip2 .card2.flipped {
   -webkit-transform: rotatey(-180deg);
 }
 .flip2 .card2 {
@@ -313,7 +343,7 @@ width: 50%;
   height: 100%;
   position: absolute;
   -webkit-backface-visibility: hidden ;
-  z-index: 1;
+  z-index: 9999;
     font-family: Georgia;
     font-size: 1em;
    
@@ -321,7 +351,7 @@ width: 50%;
 }
 .flip2 .card2 .front2 {
   position: absolute;
- /* z-index: 1;*/
+  z-index: 1;
     background: white;
     color: white;
     cursor: pointer;
@@ -329,92 +359,14 @@ width: 50%;
 }
 .flip2 .card2 .back2 {
   -webkit-transform: rotatey(-180deg);
- 	position: absolute;
- 	
-    background: white;
-    color: black;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-
-.card3 {
-  box-shadow: 0 0 10px hsla(0,0%,17%,1);
-}
-.card3:hover {
-  box-shadow: 0 0 15px hsla(206,65%,51%,1);
-}
-
-.flip3 {
-  -webkit-perspective: 800;
-   width: 300px;
-   height: 400px;
- /*  position: relative;
-   left: 880px;
-   bottom: 748px;*/
-   display: flex;
-   justify-content: center;
-
-  
-}
-.flip3 .card3.flipped3 {
-  -webkit-transform: rotatey(-180deg);
-}
-.flip3 .card3 {
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: 1s;
-}
-.flip3 .card3 .face3 {
-  width: 100%;
-  height: 100%;
   position: absolute;
-  -webkit-backface-visibility: hidden ;
-  z-index: 9999;
-    font-family: Georgia;
-    font-size: 1em;
-   
-   /* line-height: 200px;*/
-}
-.flip3 .card3 .front3 {
-  position: absolute;
-  z-index: 1;
-    background: white;
-    color: white;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-.flip3 .card3 .back3 {
-  -webkit-transform: rotatey(-180deg);
- 	position: absolute;
-
- 	margin: 0 auto;
+  margin: 0 auto;
     background: white;
     color: black;
     cursor: pointer;
     border: 1px solid transparent;
     z-index: 99;
 }
-
-
-
-/*
-
-    <div class="flip2"> 
-        <div class="card2" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
-            <div class="face2 front2"> 
-                Front
-            </div> 
-            <div class="face2 back2"> 
-                Back
-            </div> 
-        </div> 
-    </div> 
-</div>
-*/
-
-
-
 
 
 

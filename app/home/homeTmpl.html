@@ -1,9 +1,9 @@
 
-<ul class="nav nav-tabs">
+<!-- <ul class="nav nav-tabs">
   <li role="presentation"><a href="#/">Home</a></li>
   <li role="presentation"><a href="#/about">Calendar</a></li>
   <li role="presentation"><a href="#/contact">Favorites</a></li>
-</ul>
+</ul> -->
 <!--   <div class='day-container'>
     <div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
     <div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
@@ -16,15 +16,17 @@
  
 <!-- <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
 				
-<div class='userSearch' ng-hide='tester'>
-  <input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search recipe' ng-keypress='enterKey($event)'>
-  <button class='btn btn-default' ng-click='tester = !tester'>Submit</button>
-</div>
+
 					<!-- <button ng-click='newData(Monday)'>Monday</button>
 					<button ng-click='newData("Tuesday")'>Tuesday</button> -->
-           <!--       <h6>Star Rating: {{recipe[7]}}</h6>
-          <h6>{{recipe[6]}}</h6>  
-          <h4> Servings: {{recipe[3]}}</h4> -->
+              <!--    <h6>Star Rating: {{recipe[7]}}</h6>
+          <h6>{{recipe[6]}}</h6>   -->
+ <div class='image'> 
+   <img src='http://4.bp.blogspot.com/_pFTtvG46Z48/TPDX4O7-GII/AAAAAAAAAWw/q5TH_5aZenw/s1600/IMG_6819.jpg' style='height: 100%; width: 100%'>
+   <div class='userSearch' ng-hide='tester'>
+  <input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search over 350,000+ recipes' ng-keypress='enterKey($event)'>
+  <button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
+</div>
 
 <div class='flip-container'>
   <div class="flip" ng-repeat="recipe in recipes"> 
@@ -33,6 +35,8 @@
         <div class='secondImage'>
               <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
                   ng-src='{{recipe[2]}}'>
+         <div class='title'>{{recipe[5]}}</div>
+
           <div class='ratings'>
             <div class='icons'>
              <i class="fa fa-heart fa-2x"></i>
@@ -74,7 +78,7 @@
   </div> 
 </div>    
 
-  
+  </div>
 
 
 

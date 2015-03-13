@@ -1,12 +1,50 @@
+<!-- ng-repeat="recipe in recipes" -->
+<div class='flip-container2'>
+  <div class="flip2" > 
+    <div class="card2" ng-class="{'flipped':isFlipped}" > 
+      <div class="face2 front2"> 
+        <div class='secondImage'>
+              <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
+                  ng-src='{{recipe[2]}}'>
+         <div class='title'>{{recipe[5]}}</div>
 
-
-<div class='image'> 
-	 <img src='http://4.bp.blogspot.com/_pFTtvG46Z48/TPDX4O7-GII/AAAAAAAAAWw/q5TH_5aZenw/s1600/IMG_6819.jpg' style='height: 500px; width: 100%'>
-    <div class='userSearch2'>
-        <input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search recipe' ng-keypress='enterKey($event)'>
-        <button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
-   
-
-</div>
-</div>
- 
+          <div class='ratings'>
+            <div class='icons'>
+             <i class="fa fa-heart fa-2x"></i>
+             <i class="fa fa-calendar fa-2x" ng-click='myVar = !myVar'></i>
+             <i class="fa fa-shopping-cart fa-2x"></i>
+            </div>
+              <div class='weekDays' ng-show='myVar'>
+                <form>
+                  <input type='radio' name='day' ng-model='day' value='monday'>m
+                  <input type='radio' name='day' ng-model='day' value='tuesday'>t
+                  <input type='radio' name='day' ng-model='day' value='wednesday'>w
+                  <input type='radio' name='day' ng-model='day' value='thursday'>th
+                  <input type='radio' name='day' ng-model='day' value='friday'>f
+                  <input type='radio' name='day' ng-model='day' value='saturday'>s
+                  <input type='radio' name='day' ng-model='day' value='sunday'>su
+                </form>
+                  <div class='calendarButton'>
+                    <button class='btn btn-default btn-number'  ng-click='addRecipe(day, recipe[9])'>
+                      <span>Add {{day}}</span>
+                    </button> <!-- the day in addRecipe is the value stored on the ng-model from the radio button value above -->
+                  </div>
+              </div>
+                <div class='stars'>
+                  <star-rating rating='recipe[7]'></star-rating>
+                </div>
+          </div>
+        </div>
+      </div> 
+        <div class="face2 back2" ng-click="isFlipped=!isFlipped"> 
+          <div class='firstIngredients'>
+            <h1 style='text-align: center;'>{{recipe[5]}}</h1>
+            <h2>Ingredients</h2>
+            <ul ng-repeat='firstItems in recipe[0]'>
+              <li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
+            </ul>
+          </div>
+        </div>        
+    </div> 
+  </div> 
+</div>  
