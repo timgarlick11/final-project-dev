@@ -9,167 +9,45 @@
 		<div class='top sunday'>Sunday</div>
  	</div>
   	
-  	<div class='day-container'>
-		<div class='day one_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
-		<div class='day two_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
-		<div class='day three_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
-		<div class='day four_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
-		<div class='day five_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest5}}'></div>
-		<div class='day six_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest6}}'></div>
-		<div class='day seven_breafast'><img style='width: 100%; height: 100%;' ng-src='{{imageTest7}}'></div>
-  	</div>
-<!-- <div class="flip2"> 
-        <div class="card2" ng-class="{'flipped2':isFlipped2}" ng-click="isFlipped2=!isFlipped2"> 
-            <div class="face2 front2"> 
-              <div class='secondImage'>
-          			<img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{secondImage}}'>
-          		<div class='ratings'><h6>Star Rating: {{secondStarRating}}</h6>
-					<h6>Total Reviews: {{secondReviews}}</h6>  
-					<h4> Servings: {{secondServings}}</h4>
-				</div>
-          	  </div>
-            	</div> 
-            		
-            		<div class="face2 back2"> 
-               			<div class='firstIngredients'>
-						<h1 style='text-align: center;'>{{secondTitle}}</h1>
-						<h2>Ingredients</h2>
-					<ul ng-repeat='secondItems in secondIngredients'>
-						<li style='width: 100%; height: 100%'>{{secondItems.Name}} {{secondItems.Quantity}} {{secondItems.Unit}} </li>
-					</ul>
-				</div>
-            </div> 
-        </div> 
-    </div>  -->
-
-
-
-
-<!-- 
-<div class='mainContainer'>
-	<div class='firstIngredients'>
-		<h1>{{firstTitle}}</h1>
-		<h2>Ingredients</h2>
-		<h6>Star Rating: {{firstStarRating}}</h6>
-		<h6>Total Reviews: {{firstReviews}}</h6>  
-		<h4> Servings: {{firstServings}}</h4>
-		<ul ng-repeat='firstItems in firstIngredients'>
-			<li>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
-	
-		</ul>
-	</div>
-
-<div class='image'> 
-	<img ng-src='{{firstImage}}'>
+<div class='day-container'>
+	<div class='day one' ng-click="test1 = !test1"><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
+	<div class='day two' ng-click='test2 = !test2'><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
+	<div class='day three' ng-click='test3 = !test3'><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
+	<div class='day four' ng-click='test4 = !test4'><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
+	<div class='day five' ng-click='test5 = !test5'><img style='width: 100%; height: 100%;' ng-src='{{imageTest5}}'></div>
+	<div class='day six' ng-click='test6 = !test6'><img style='width: 100%; height: 100%;' ng-src='{{imageTest6}}'></div>
+	<div class='day seven' ng-click='test7 = !test7'><img style='width: 100%; height: 100%;' ng-src='{{imageTest7}}'></div>
 </div>
-
-
-
-
-</div>
-<div class='secondIngredients'>
-		<h1>{{secondTitle}}</h1>
-		<h2>Ingredients</h2>
-		<h6>Star Rating: {{secondStarRating}}</h6>
-		<h6>Total Reviews: {{secondStarReviews}}</h6>  
-		<h4> Servings: {{servings}}</h4>
-		<ul ng-repeat='secondItems in secondIngredients'>
-			<li>{{secondItems.Name}} {{secondItems.Quantity}} {{secondItems.Unit}} </li>
-	
-		</ul>
-	</div>
-<div class='secondImage'> 
-	<img ng-src='{{secondImage}}'>
-</div>
-
-<div class='secondInstructions'>
-		<h4> Time: {{secondTime}} mins </h4>
-		{{secondInstructions}}
-</div>
-{{tim}}
-</div> --> 
-
-  
-
-
-
-<!-- <div class='calendar-container'> -->
-	
-
-	<!-- <div class='top monday'>Monday</div>
-	<div class='top tuesday'>Tuesday</div>
-	<div class='top wednesday'>Wednesday</div>
-	<div class='top thursday'>Thursday</div>
-	<div class='top friday'>Friday</div>
-	<div class='top saturday'>Saturday</div>
-	<div class='top sunday'>Sunday</div>
-	<div class='day one_breafast'><p ng-repeat='recipe in recipes'>{{recipe.$value}}></p><img ng-src='{{recipes}}'/></div>
-	<div class='day two_breafast'><button ng-click='loadRecipes("recipes")'>Dispay</button></div>
-	<div class='day three_breafast'></div>
-	<div class='day four_breafast'></div>
-	<div class='day five_breafast'></div>
-	<div class='day six_breafast'></div>
-	<div class='day seven_breafast'></div>
-	<div class='day one_lunch'></div>
-	<div class='day two_lunch'></div>
-	<div class='day three_lunch'></div>
-	<div class='day four_lunch'></div>
-	<div class='day five_lunch'></div>
-	<div class='day six_lunch'></div>
-	<div class='day seven_lunch'></div>
-	<div class='day one_dinner'></div>
-	<div class='day two_dinner'></div>
-	<div class='day three_dinner'></div>
-	<div class='day four_dinner'></div>
-	<div class='day five_dinner'></div>
-	<div class='day six_dinner'></div>
-	<div class='day seven_dinner'></div> -->
-<!-- </div> -->
-
-<!--   <div class='day-container'>
-  <div class='day one_breafast'></div>
-	<div class='day two_breafast'></div>
-	<div class='day three_breafast'></div>
-	<div class='day four_breafast'></div>
-	<div class='day five_breafast'></div>
-	<div class='day six_breafast'></div>
-	<div class='day seven_breafast'></div>
-  </div>
  
-<! <input type='text' placeholder='text' ng-model='date' /> -->  <!-- jqdatepicker this needs to go back into the inuput box-->
-<!-- 				
-<div class='userSearch'> -->
-<!-- 
-<input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe' placeholder='search recipe' ng-keypress='enterKey($event)' >
-<button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
+ 	<div class='greyedOut' ng-show='test1'>
+  		<div class='info info-monday' ng-show='test1'>1<i class="fa fa-times-circle-o fa-2x" ng-click="test1 = !test1"></i></div>
+	</div>  
+  
+  		<div class='greyedOut' ng-show='test2'>	
+  			<div class='info info-tuesday' ng-show='test2'>2<i class="fa fa-times-circle-o fa-2x" ng-click="test2 = !test2"></i></div>
+  		</div>
+   
+   			<div class='greyedOut' ng-show='test3'>	
+  				<div class='info info-wednesday' ng-show='test3'>3<i class="fa fa-times-circle-o fa-2x" ng-click="test3 = !test3"></i></div>
+  			</div>
+  	
+ 				<div class='greyedOut' ng-show='test4'>	
+  					<div class='info info-thursday' ng-show='test4'>4<i class="fa fa-times-circle-o fa-2x" ng-click="test4 = !test4"></i></div>
+  				</div>
+  	
+ 					<div class='greyedOut' ng-show='test5'>	
+  						<div class='info info-friday' ng-show='test5'>5<i class="fa fa-times-circle-o fa-2x" ng-click="test5 = !test5"></i></div>
+  					</div>
 
-</div>
-					<! <button ng-click='newData(Monday)'>Monday</button>
-					<button ng-click='newData("Tuesday")'>Tuesday</button> -->
-<!--  <div class='flip-container'>
+ 						<div class='greyedOut' ng-show='test6'>	
+  							<div class='info info-saturday' ng-show='test6'>6<i class="fa fa-times-circle-o fa-2x" ng-click="test6 = !test6"></i></div>
+  						</div>
 
-<div class="flip" ng-repeat="recipe in recipes"> 
-        <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"> 
-            <div class="face front"> 
-              <div class='secondImage'>
-                <img src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' ng-src='{{recipe[2]}}'>
-              <div class='ratings'>
-                <h6>Star Rating: {{recipe[7]}}</h6>
-          <h6>{{recipe[6]}}</h6>  
-          <h4> Servings: {{recipe[3]}}</h4>
-        </div>
-              </div>
-              </div> 
-                
-                <div class="face back"> 
-                    <div class='firstIngredients'>
-            <h1 style='text-align: center;'>{{recipe[5]}}</h1>
-            <h2>Ingredients</h2>
-          <ul ng-repeat='firstItems in recipe[0]'>
-            <li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
-          </ul>
-        </div>
-            </div> 
-        </div> 
-    </div>  -->
+ 							<div class='greyedOut' ng-show='test7'>	 	
+  								<div class='info info-sunday' ng-show='test7'>7<i class="fa fa-times-circle-o fa-2x" ng-click="test7 = !test7"></i></div>
+  							</div>
+
+
+
+
 

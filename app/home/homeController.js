@@ -98,6 +98,17 @@ $scope.date = today
 
 
 });
+
+// things to to complete in order for my code to be demo ready.
+
+// -clear calendar week.
+// -clear flip cards refactored and smalled for favorites.
+// -week days clicked and show a slide down div
+// -load content in favorites smoothly.
+// -add wording content to search menu
+// -figure out a way to text message recipe ingredients.
+// -fix calendar buttons
+// -fix submit buttons
             
            // 3 questions,
 
