@@ -44,18 +44,42 @@
              <i class="fa fa-shopping-cart fa-2x"></i>
             </div>
               <div class='weekDays' ng-show='myVar'>
-                <form>
-                  <input type='radio' name='day' ng-model='day' value='monday'>m
-                  <input type='radio' name='day' ng-model='day' value='tuesday'>t
-                  <input type='radio' name='day' ng-model='day' value='wednesday'>w
-                  <input type='radio' name='day' ng-model='day' value='thursday'>th
-                  <input type='radio' name='day' ng-model='day' value='friday'>f
-                  <input type='radio' name='day' ng-model='day' value='saturday'>s
-                  <input type='radio' name='day' ng-model='day' value='sunday'>su
-                </form>
+                
+                
+              <div class='inputDays'>
+                  
+                  <label for="my_radio_button_id2" >M
+                    <input type='radio' name='day' ng-model='day' value='monday'>
+                  </label>
+                    
+                    <label for="my_radio_button_id2">T
+                      <input type='radio' name='day' ng-model='day' value='tuesday'>
+                    </label>
+                      
+                      <label for="my_radio_button_id3">W
+                        <input type='radio' name='day' ng-model='day' value='wednesday'>
+                      </label>
+                        
+                        <label for="my_radio_button_id4">Th
+                          <input type='radio' name='day' ng-model='day' value='thursday'>
+                        </label>
+                          
+                          <label for="my_radio_button_id5">F
+                            <input type='radio' name='day' ng-model='day' value='friday'>
+                          </label>
+                            
+                            <label for="my_radio_button_id6">S
+                              <input type='radio' name='day' ng-model='day' value='saturday'>
+                            </label>
+                              
+                              <label for="my_radio_button_id7">Su
+                                <input type='radio' name='day' ng-model='day' value='sunday'>
+                              </label>
+             </div>
                   <div class='calendarButton'>
-                    <button class='btn btn-default btn-number'  ng-click='addRecipe(day, recipe[9]); myVar = !myVar; starDisplay = !starDisplay'>
-                      <span>Add {{day}}</span>
+                    <button class='btn btn-xs btn-number'  ng-click='addRecipe(day, recipe[9]); myVar = !myVar; starDisplay = !starDisplay'>
+                      <span style='text-align: center;'>Add</span>
+                      <span style='text-align: center;'>{{day}}</span>
                     </button> <!-- the day in addRecipe is the value stored on the ng-model from the radio button value above -->
                   </div>
               </div>

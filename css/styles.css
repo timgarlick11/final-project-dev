@@ -6,10 +6,10 @@ margin: 0;
 
 
 }
-* {
+/** {
   border: 1px solid black;
   box-sizing: border-box;
-}
+}*/
 .nav {
 
 	background-color: 
@@ -53,11 +53,15 @@ z-index: 3;
 	width: 100%;
 }
 .title {
-  position: relative;
+  position: absolute;
+  height: 50%;
+  width: 135%;
   margin: 20px auto 0 auto;
   text-align: center;
-  font-size: 30px;
-  overflow: hidden;
+  font-size: 2em;
+  right: -25px;
+ 
+  overflow: scroll;
 }
 .ratings {
 position: absolute;
@@ -72,6 +76,23 @@ box-shadow: 0 0 2px hsla(0,0%,17%,1);
 
 
 
+}
+
+.inputDays {
+margin: 2px 11px;
+width: 100%;
+padding-left: 4px;
+border-top: 1px solid black;
+}
+.inputDays > label {
+  display: inline-block;
+  text-align: center;
+   margin:0 0.3em;
+   font-size: 1em;
+}
+.inputDays > label > input[type="radio"] {
+  display: block;
+   margin:0 auto;
 }
 
 
@@ -269,7 +290,18 @@ width: 70%;
 
 }
 .calendarButton {
- margin:0 auto;
+width: 50%;
+margin: 0 auto;
+}
+.calendarButton > button > span {
+display: inline-block;
+font-size: .75em;
+}
+.btn-number{
+  width: 100%;
+margin: 0 auto;
+background-color: hsla(36,100%,50%,1);
+box-shadow:0 0 3px hsla(0,0%,17%,1);
 }
 .stars {
   width: 45%;
@@ -432,8 +464,21 @@ border-radius: 5px;
 }*/
 
 
-
-
+/*
+<div id="checkboxes">
+    <div class="checkboxgroup">
+        <label for="my_radio_button_id1">My Label1</label>
+        <input type="radio" name="radio" id="my_radio_button_id1" />
+    </div>
+    <div class="checkboxgroup">
+        <label for="my_radio_button_id2">My Label2</label>
+        <input type="radio" name="radio" id="my_radio_button_id2" />
+    </div>
+    <div class="checkboxgroup">
+        <label for="my_radio_button_id3">My Label3</label>
+        <input type="radio" name="radio" id="my_radio_button_id3" />
+    </div>
+</div>*/
 
 
 
