@@ -149,11 +149,14 @@ overflow: auto;
  	
  }
  .userSearch {
+ display: flex;
+ justify-content: flex-start;
   width: 50%;
   position: absolute;
 margin: 0 auto;
 top: 20px;
 right: 275px;
+float: left;
   
 }
 .col-sm-6.col-md-4 {

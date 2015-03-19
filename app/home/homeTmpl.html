@@ -21,11 +21,14 @@
 					<button ng-click='newData("Tuesday")'>Tuesday</button> -->
               <!--    <h6>Star Rating: {{recipe[7]}}</h6>
           <h6>{{recipe[6]}}</h6>   -->
+
+
  <div class='image'> 
+   <button ng-click='hello()'></button>
    <img src='http://4.bp.blogspot.com/_pFTtvG46Z48/TPDX4O7-GII/AAAAAAAAAWw/q5TH_5aZenw/s1600/IMG_6819.jpg' style='height: 100%; width: 100%'>
    <div class='userSearch' ng-hide='tester'>
-  <input style='width: 70%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search over 350,000+ recipes' ng-keypress='enterKey($event)'>
-  <button class='btn btn-default' ng-click='submitQuery()'>Submit</button>
+  <input class='form-control search-input-button'style='width: 90%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search over 350,000+ recipes' ng-keypress='enterKey($event)'><span class="input-group-btn"><button class="btn btn-default btnstateless search-input-button" ng-click='submitQuery()'><span><i class="fa fa-search"></i></span></button></span>
+  <!-- <button class='btn btn-default' ng-click='submitQuery()'><span><i class="fa fa-search"></i></span></button> -->
 </div>
 
 <div class='flip-container'>

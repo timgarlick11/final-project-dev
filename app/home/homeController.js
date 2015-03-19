@@ -83,6 +83,7 @@ $scope.date = today
                 homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
                     console.log('recipeResults1: ',recipeResults);
                     $scope.recipes.push(recipeResults);
+
                 
                 }, function(err) {
                     console.log('FAILED!!!: ', err);

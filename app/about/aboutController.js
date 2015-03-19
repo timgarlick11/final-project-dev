@@ -21,18 +21,17 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
  // $scope.showMe = function(event) {
  //    $(event.target).find('.info').toggle();
  //  };
+ var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
 
     
     homeService.loadRecipes('monday').then(function(recipeId) {
 
         homeService.getRecipe(recipeId).then(function(recipeResults) {
                 $scope.imageTest = recipeResults[2]
-                console.log(recipeResults)
-                // $scope.recipe1 = []
-                // for (var i = 0; i < recipeResults.length; i++) {
-                //    $scope.recipe1.push(recipeResults[i])
-                //    console.log($scope.recipe1[i])
-                // };
+                console.log(recipeResults.length)
+                $scope.tim = recipeResults
+                console.log($scope.tim[5])
+
         
         })
     })        
@@ -87,6 +86,29 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
                 $scope.imageTest7 = recipeResults[2]
             })
     }) 
+
+$scope.removeMonday = function(day) {
+
+    homeService.removeDay(day).then(function(test) {
+           console.log(test)
+           $scope.imageTest = defaultImage;
+    }) 
+}
+
+// this.loadRecipes = function(day) {
+//         var deferred = $q.defer() 
+//         var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+//         var ref = new Firebase(firebaseUrl);
+//         var dateRef = $firebase(ref.child(day)).$asArray();
+                    
+//         dateRef.$loaded().then(function (results) {
+              
+//            var recipeId = ((results[results.length -1]).$value);
+//            console.log(recipeId)
+//             deferred.resolve(recipeId)
+//         })
+//         return deferred.promise
+//     };
 
  
 })

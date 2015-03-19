@@ -67,6 +67,7 @@ this.getData = function(userSearch) {
 	    var dateRef = $firebase(ref.child(day)).$asArray();
 	                
         dateRef.$loaded().then(function (results) {
+        	console.log(results)
               var recipeId = []
               for (var i = 0; i < results.length; i++) {
               	recipeId.push(results[i].$value)
@@ -82,9 +83,25 @@ this.getData = function(userSearch) {
                 var firebaseUrl = 'https://food-calendar.firebaseio.com/';
                 var ref = new Firebase(firebaseUrl);
                 var dateRef = $firebase(ref.child(day)).$asArray(); 
- 				dateRef.$add(recipeId)
+ 				dateRef.$add(recipeId).then(function(test) {
+ 					console.log(test)
+ 				})
  				
 	}
+	
+
+this.removeDay = function(day) { 
+    var deferred = $q.defer() 
+    var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+    var ref = new Firebase(firebaseUrl);
+    var dateRef = $firebase(ref);
+    	
+    	dateRef.$remove(day).then(function(test) {
+			console.log(test)
+      		deferred.resolve(test)
+    	})
+    		return deferred.promise
+}
 // var recId;
 //  this.setId = function(newId) {
 //  	recId = newId;

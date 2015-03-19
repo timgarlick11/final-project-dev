@@ -15,7 +15,18 @@ app.controller('contactController', function($scope, homeService) {
         	})	
                 // console.log(recipeResults)
         }       
-    })   
+    })
+
+    $scope.addRecipe = function (day, recipeId) {
+        console.log(day)
+        console.log(recipeId)
+        homeService.addData(day, recipeId)
+
+            homeService.getRecipe(recipeId).then(function (recipeResults) {
+                console.log('recipeResults1: ',recipeResults[2]);
+                $scope.imageTest = recipeResults[2];
+            });
+    };   
 
 })
  
