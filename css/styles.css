@@ -208,7 +208,7 @@ body {
   border-radius: 5px;
 }
 .card:hover {
-  box-shadow: 0 0 15px hsla(206,65%,51%,1);
+  box-shadow: 0 0 15px hsla(11,59%,47%,1);
 }
 
 .flip-container {
@@ -315,7 +315,7 @@ box-shadow:0 0 3px hsla(0,0%,17%,1);
   position: absolute;
   height: 600px;
   width: 100%;
-  top: 40px;
+  top: 41px;
 
   
 }
@@ -430,12 +430,13 @@ border-radius: 5px;
 .info {
   margin: 0 auto;
   width: 500px;
-  height: 400px;
+  height: 70%;
   background: white;
   position: relative;
   top: 75px;
   z-index: 2;
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
+  overflow: auto;
  
 }
 
@@ -459,7 +460,29 @@ border-radius: 5px;
   opacity:0;
 } 
 .fa-times-circle-o {
-  float: right;
+  position: fixed;
+  top: 75px;
+  right: 335px;
+
+}
+.fa-times-circle-o:hover{
+  color: hsla(360,100%,50%,.6)
+}
+.calendarImage {
+  height: 20%;
+  width: 15%;
+  margin: 10px auto 10px auto;
+  box-shadow: 0 0 2px hsla(0,0%,17%,1);
+}
+.calendarTitle {
+  font-size: 40px;
+  text-align: center;
+  margin:0 auto 10px auto;
+}
+
+.calendarDirections {
+  width: 80%;
+  margin: 0 auto;
 }
 /*.RecipeDayInfo:hover{
 

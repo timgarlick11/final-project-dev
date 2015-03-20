@@ -24,7 +24,6 @@
 
 
  <div class='image'> 
-   <button ng-click='hello()'></button>
    <img src='http://4.bp.blogspot.com/_pFTtvG46Z48/TPDX4O7-GII/AAAAAAAAAWw/q5TH_5aZenw/s1600/IMG_6819.jpg' style='height: 100%; width: 100%'>
    <div class='userSearch' ng-hide='tester'>
   <input class='form-control search-input-button'style='width: 90%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search over 350,000+ recipes' ng-keypress='enterKey($event)'><span class="input-group-btn"><button class="btn btn-default btnstateless search-input-button" ng-click='submitQuery()'><span><i class="fa fa-search"></i></span></button></span>
@@ -78,7 +77,7 @@
                   <label for="my_radio_button_id7">Su
                     <input type='radio' name='day' ng-model='day' value='sunday'>
                   </label>
-                  
+
               </div>
                   <div class='calendarButton'>
                     <button class='btn btn-xs btn-number'  ng-click='addRecipe(day, recipe[9]); myVar = !myVar; starDisplay = !starDisplay'>

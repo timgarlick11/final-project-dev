@@ -24,13 +24,13 @@
  	<div class='greyedOut' ng-show='test1'>
  		
  		
-  		<div class='info info-monday' ng-show="test1" ng-repeat="recipe in recipeInfo" >1<i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1"></i>
- 					<img style="width: 50px; height: 60px" ng-src="{{recipe[2]}}">
- 					<h1>{{recipe[5]}}</h1>
+  		<div class='info info-monday' ng-show="$parent.test1" ng-repeat="recipe in recipeInfo" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1"></i>
+ 					<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
+ 					<div class="calendarTitle">{{recipe[5]}}</div>
  				<ul ng-repeat='firstItems in recipe[0]'>
               		<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            		</ul>
- 				<div>{{recipe[1]}}</div>
+ 				<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
   		</div>
 	</div>  
   
