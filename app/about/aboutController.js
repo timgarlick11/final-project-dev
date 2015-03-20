@@ -21,16 +21,16 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
  // $scope.showMe = function(event) {
  //    $(event.target).find('.info').toggle();
  //  };
+
  var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
 
     
     homeService.loadRecipes('monday').then(function(recipeId) {
-
+            $scope.recipeInfo = []
         homeService.getRecipe(recipeId).then(function(recipeResults) {
                 $scope.imageTest = recipeResults[2]
-                console.log(recipeResults.length)
-                $scope.tim = recipeResults
-                console.log($scope.tim[5])
+                $scope.recipeInfo.push(recipeResults)
+               
 
         
         })
@@ -92,6 +92,8 @@ $scope.removeMonday = function(day) {
     homeService.removeDay(day).then(function(test) {
            console.log(test)
            $scope.imageTest = defaultImage;
+           $scope.recipeInfo = !$scope.recipeInfo && test1
+           // $scope.recipeInfo = [[{Name:null},{Quantity:0},{Unit:null}], null];
     }) 
 }
 

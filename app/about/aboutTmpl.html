@@ -1,4 +1,5 @@
 	<button ng-click="removeMonday('monday')"></button>
+				
 	
 	<div class='top-container'>
 		<div class='top monday'>Monday</div>
@@ -23,8 +24,13 @@
  	<div class='greyedOut' ng-show='test1'>
  		
  		
-  		<div class='info info-monday' ng-show='test1'>1<i class="fa fa-times-circle-o fa-2x" ng-click="test1 = !test1"></i>
-  			<p ng-repeat="recipe in tim"> {{recipe}}</p>
+  		<div class='info info-monday' ng-show="test1" ng-repeat="recipe in recipeInfo" >1<i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1"></i>
+ 					<img style="width: 50px; height: 60px" ng-src="{{recipe[2]}}">
+ 					<h1>{{recipe[5]}}</h1>
+ 				<ul ng-repeat='firstItems in recipe[0]'>
+              		<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
+           		</ul>
+ 				<div>{{recipe[1]}}</div>
   		</div>
 	</div>  
   
