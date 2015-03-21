@@ -80,14 +80,28 @@ this.getData = function(userSearch) {
 	};
 
   	this.addData = function (day, recipeId) {
-                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+                var firebaseUrl = 'https://food-calendar.firebaseio.com/calendar';
                 var ref = new Firebase(firebaseUrl);
-                var dateRef = $firebase(ref.child(day)).$asArray(); 
+                var dateRef = $firebase(ref.child(day)).$asArray();
+                var dateRemove = $firebase(ref);
+                dateRemove.$remove(day) 
  				dateRef.$add(recipeId).then(function(test) {
  					console.log(test)
  				})
  				
 	}
+    
+    this.addFavorites = function (favorites, recipeId) {
+		var favoritesUrl = 'https://food-calendar.firebaseio.com/';
+        var ref = new Firebase(favoritesUrl);
+        var favRef = $firebase(ref.child(favorites)).$asArray();
+        favRef.$add(recipeId).then(function(test) {
+        	console.log(test)
+        })
+
+
+    }
+
 	
 
 this.removeDay = function(day) { 

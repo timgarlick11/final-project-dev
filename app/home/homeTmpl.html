@@ -23,7 +23,7 @@
           <h6>{{recipe[6]}}</h6>   -->
 
 
- <div class='image'> 
+<div class='image'> 
    <img src='http://4.bp.blogspot.com/_pFTtvG46Z48/TPDX4O7-GII/AAAAAAAAAWw/q5TH_5aZenw/s1600/IMG_6819.jpg' style='height: 100%; width: 100%'>
    <div class='userSearch' ng-hide='tester'>
   <input class='form-control search-input-button'style='width: 90%; height: 100%; text-align: center; box-shadow: 0 0 1px hsla(0,0%,17%,1);' ng-model='searchRecipe'  placeholder='search over 350,000+ recipes' ng-keypress='enterKey($event)'><span class="input-group-btn"><button class="btn btn-default btnstateless search-input-button" ng-click='submitQuery()'><span><i class="fa fa-search"></i></span></button></span>
@@ -36,12 +36,12 @@
       <div class="face front"> 
         <div class='secondImage'>
               <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
-                  ng-src='{{recipe[2]}}'>
+              ng-src='{{recipe[2]}}'>
          <div class='title'>{{recipe[5]}}</div>
 
           <div class='ratings'>
             <div class='icons'>
-             <i class="fa fa-heart fa-2x" ng-click='addRecipe("favorites", recipe[9])'></i>
+             <i class="fa fa-heart fa-2x" ng-click='addFavorites("favorites", recipe[9])'></i>
              <i class="fa fa-calendar fa-2x" ng-click='myVar = !myVar; starDisplay = !starDisplay'></i>
              <i class="fa fa-shopping-cart fa-2x"></i>
             </div>
@@ -105,7 +105,7 @@
   </div> 
 </div>    
 
-  </div>
+</div>
 
 
 

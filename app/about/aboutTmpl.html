@@ -1,4 +1,5 @@
-	<button ng-click="removeMonday('monday')"></button>
+	
+<button ng-click="removeMonday('monday')"></button>
 				
 	
 	<div class='top-container'>
@@ -12,7 +13,7 @@
  	</div>
   	
 <div class='day-container'>
-	<div class='day one' ng-click="test1 = !test1"><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
+	<div class='day one' ng-click="recipes ? test1 = !test1 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
 	<div class='day two' ng-click='test2 = !test2'><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
 	<div class='day three' ng-click='test3 = !test3'><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
 	<div class='day four' ng-click='test4 = !test4'><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
@@ -24,7 +25,7 @@
  	<div class='greyedOut' ng-show='test1'>
  		
  		
-  		<div class='info info-monday' ng-show="$parent.test1" ng-repeat="recipe in recipeInfo" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1"></i>
+  		<div class='info info-monday' ng-show="$parent.test1" ng-repeat="recipe in recipes = recipeInfo" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1"></i>
  					<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  					<div class="calendarTitle">{{recipe[5]}}</div>
  				<ul ng-repeat='firstItems in recipe[0]'>
@@ -34,6 +35,95 @@
   		</div>
 	</div>  
   
+  		<div class='greyedOut' ng-show='test2'>	
+  			<div class='info info-tuesday' ng-show='test2'>2<i class="fa fa-times-circle-o fa-2x" ng-click="test2 = !test2"></i></div>
+  		</div>
+   
+   			<div class='greyedOut' ng-show='test3'>	
+  				<div class='info info-wednesday' ng-show='test3'>3<i class="fa fa-times-circle-o fa-2x" ng-click="test3 = !test3"></i></div>
+  			</div>
+  	
+ 				<div class='greyedOut' ng-show='test4'>	
+  					<div class='info info-thursday' ng-show='test4'>4<i class="fa fa-times-circle-o fa-2x" ng-click="test4 = !test4"></i></div>
+  				</div>
+  	
+ 					<div class='greyedOut' ng-show='test5'>	
+  						<div class='info info-friday' ng-show='test5'>5<i class="fa fa-times-circle-o fa-2x" ng-click="test5 = !test5"></i></div>
+  					</div>
+
+ 						<div class='greyedOut' ng-show='test6'>	
+  							<div class='info info-saturday' ng-show='test6'>6<i class="fa fa-times-circle-o fa-2x" ng-click="test6 = !test6"></i></div>
+  						</div>
+
+ 							<div class='greyedOut' ng-show='test7'>	 	
+  								<div class='info info-sunday' ng-show='test7'>7<i class="fa fa-times-circle-o fa-2x" ng-click="test7 = !test7"></i></div>
+  							</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <button ng-click="displayRecipe(0)"></button>
+				
+	
+	<div class='top-container'>
+		<div class='top monday'>Monday</div>
+		<div class='top tuesday'>Tuesday</div>
+		<div class='top wednesday'>Wednesday</div>
+		<div class='top thursday'>Thursday</div>
+		<div class='top friday'>Friday</div>
+		<div class='top saturday'>Saturday</div>
+		<div class='top sunday'>Sunday</div>
+ 	</div>
+  	
+<div class='day-container'>
+	<div class='day one' ng-repeat="recipe in recipeArr" ng-click="displayRecipe($index)" ><img style='width: 100%; height: 100%;' ng-src='{{recipe.image}}'></div>
+	<div class='day two' ng-click='test2 = !test2'><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
+	<div class='day three' ng-click='test3 = !test3'><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
+	<div class='day four' ng-click='test4 = !test4'><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
+	<div class='day five' ng-click='test5 = !test5'><img style='width: 100%; height: 100%;' ng-src='{{imageTest5}}'></div>
+	<div class='day six' ng-click='test6 = !test6'><img style='width: 100%; height: 100%;' ng-src='{{imageTest6}}'></div>
+	<div class='day seven' ng-click='test7 = !test7'><img style='width: 100%; height: 100%;' ng-src='{{imageTest7}}'></div>
+</div>
+ 
+ 	<div class='greyedOut' ng-show='showRecipe'>
+  		<div class='info info-monday'><i class="fa fa-times-circle-o fa-2x" ng-click="hideRecipe()"></i>
+ 					<div class="calendarImage"><img style="height: 100%; width: 100%;" src="{{currentRecipe.image}}"></div>
+ 					<div class="calendarTitle">{{currentRecipe.info[5]}}</div>
+ 				
+ 				<ul ng-repeat="ingredient in currentRecipe.info[0]">
+              		<li style='width: 100%; height: 100%'>{{ingredient.Name}} {{ingredient.Quantity}} {{ingredient.Unit}} </li>
+           		</ul>
+ 				
+ 						<div class="calendarDirections" style="text-align: left;">{{currentRecipe.info[1]}}</div>
+  		</div>
+	</div>   -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
   		<div class='greyedOut' ng-show='test2'>	
   			<div class='info info-tuesday' ng-show='test2'>2<i class="fa fa-times-circle-o fa-2x" ng-click="test2 = !test2"></i></div>
   		</div>

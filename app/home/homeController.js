@@ -2,47 +2,24 @@ var app = angular.module('theHomeLife')
  
 app.controller('homeController', function ($scope, homeService, $firebase, $location) {
  
-        //on load = get weekOfReceipes 
-        //loop through those and make a "homeService.getData(receipe) for each one."
-
-    //call this method for every recipeId for the week
-    //also call this mehtod from inside submitQuery
-    //this is your one way to get a single full recipe
-    //it should return a full recipe back to whoever called it.
-    // function getReceipe(id) {
-    //         homeService.getRecipe(id).then(function (recipeResults) {
-    //         return recipeResults
-    //     } } 
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
-
-if(dd<10) {
-    dd='0'+dd
-} 
-
-if(mm<10) {
-    mm='0'+mm
-} 
-
-today = mm+'/'+dd+'/'+yyyy;
-$scope.date = today
 
 
 
 
-    $scope.addRecipe = function (day, recipeId) {
-        console.log(day)
-        console.log(recipeId)
-        homeService.addData(day, recipeId)
+
+    $scope.addRecipe = function (day, recipeId, favorites) {
+        
+        homeService.addData(day, recipeId, favorites)
 
             homeService.getRecipe(recipeId).then(function (recipeResults) {
-                console.log('recipeResults1: ',recipeResults[2]);
                 $scope.imageTest = recipeResults[2];
             });
     };
 
+    $scope.addFavorites = function (favorites, recipeId) {
+        
+        homeService.addFavorites(favorites, recipeId)
+    };
 
 
     $scope.enterKey = function(keyEvent) {
@@ -60,6 +37,11 @@ $scope.date = today
                     homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
                         console.log('recipeResults1: ',recipeResults);
                         $scope.recipes.push(recipeResults);
+
+                        console.log("=====================PRINT RECIPE====================");
+
+                        var directions = $scope.recipes[1][1].split("/(\d+)/g");
+                        console.log(directions);
                       
                     }, function(err) {
                             console.log('FAILED!!!: ', err);
