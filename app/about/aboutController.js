@@ -22,72 +22,80 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
  //    $(event.target).find('.info').toggle();
  //  };
   var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
- 
+   $scope.imageTest = defaultImage;
+    var days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
    
-            $scope.imageTest = defaultImage;
-    homeService.loadRecipes('monday').then(function(recipeId) {
+    for (var i = 0; i < days.length; i++) {
+       
+         
+        homeService.loadRecipes(days[i]).then(function(recipeId) {
+            console.log(recipeId.$id)
+            for (var i = 0; i < recipeId.length; i++) {
+                console.log(recipeId[i].$id)
+            }
+        });
         
-        
-            $scope.recipeInfo = [];
-        homeService.getRecipe(recipeId).then(function(recipeResults) {
-                $scope.imageTest = recipeResults[2];
-                $scope.recipeInfo.push(recipeResults);
+        //     $scope.recipeInfo = [];
+        // homeService.getRecipe(recipeId).then(function(recipeResults) {
+        //         $scope.imageTest = recipeResults[2];
+        //         $scope.recipeInfo.push(recipeResults);
+   
                
 
         
-        })
-    })        
+    };
+    // })        
             
-    homeService.loadRecipes('tuesday').then(function(recipeId) {
+    // homeService.loadRecipes('tuesday').then(function(recipeId) {
 
-        homeService.getRecipe(recipeId).then(function(recipeResults) {
-                console.log(recipeResults)
-                $scope.imageTest2 = recipeResults[2]
+    //     homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest2 = recipeResults[2]
         
-        })
-    })  
+    //     })
+    // })  
 
 
-    homeService.loadRecipes('wednesday').then(function(recipeId) {
+    // homeService.loadRecipes('wednesday').then(function(recipeId) {
 
-        homeService.getRecipe(recipeId).then(function(recipeResults) {
-                console.log(recipeResults)
-                $scope.imageTest3 = recipeResults[2]
+    //     homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest3 = recipeResults[2]
         
-        })
-    })  
+    //     })
+    // })  
 
-    homeService.loadRecipes('thursday').then(function(recipeId) {
+    // homeService.loadRecipes('thursday').then(function(recipeId) {
        
-            homeService.getRecipe(recipeId).then(function(recipeResults) {
-                console.log(recipeResults)
-                $scope.imageTest4 = recipeResults[2]
-            })
-    })
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest4 = recipeResults[2]
+    //         })
+    // })
 
-    homeService.loadRecipes('friday').then(function(recipeId) {
+    // homeService.loadRecipes('friday').then(function(recipeId) {
        
-            homeService.getRecipe(recipeId).then(function(recipeResults) {
-                console.log(recipeResults)
-                $scope.imageTest5 = recipeResults[2]
-            })
-    })  
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest5 = recipeResults[2]
+    //         })
+    // })  
       
-    homeService.loadRecipes('saturday').then(function(recipeId) {
+    // homeService.loadRecipes('saturday').then(function(recipeId) {
        
-            homeService.getRecipe(recipeId).then(function(recipeResults) {
-                console.log(recipeResults)
-                $scope.imageTest6 = recipeResults[2]
-            })
-    })  
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest6 = recipeResults[2]
+    //         })
+    // })  
 
-    homeService.loadRecipes('sunday').then(function(recipeId) {
+    // homeService.loadRecipes('sunday').then(function(recipeId) {
        
-            homeService.getRecipe(recipeId).then(function(recipeResults) {
-                console.log(recipeResults)
-                $scope.imageTest7 = recipeResults[2]
-            })
-    }) 
+    //         homeService.getRecipe(recipeId).then(function(recipeResults) {
+    //             console.log(recipeResults)
+    //             $scope.imageTest7 = recipeResults[2]
+    //         })
+    // }) 
 
 $scope.removeMonday = function(day) {
 
