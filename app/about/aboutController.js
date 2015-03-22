@@ -23,15 +23,15 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
  //  };
   var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
    $scope.imageTest = defaultImage;
-    var days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
    
-    for (var i = 0; i < days.length; i++) {
+   
+
        
          
-        homeService.loadRecipes(days[i]).then(function(recipeId) {
-            console.log(recipeId.$id)
+        homeService.loadRecipes().then(function(recipeId) {
+            console.log(recipeId)
             for (var i = 0; i < recipeId.length; i++) {
-                console.log(recipeId[i].$id)
+                console.log(recipeId[i])
             }
         });
         
@@ -43,7 +43,7 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
                
 
         
-    };
+  
     // })        
             
     // homeService.loadRecipes('tuesday').then(function(recipeId) {
