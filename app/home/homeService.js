@@ -48,11 +48,11 @@ this.getData = function(userSearch) {
 		var deferred = $q.defer() 
 		var firebaseUrl = 'https://food-calendar.firebaseio.com/';
 	    var ref = new Firebase(firebaseUrl);
-	    var dateRef = $firebase(ref).$asArray();
+	    var dateRef = $firebase(ref.child(day)).$asArray();
 	                
         dateRef.$loaded().then(function (results) {
-              var recipeId = results;
-              console.log(results);
+              var recipeId = results[0].$value;
+              console.log(recipeId);
               deferred.resolve(recipeId);
 		})
         return deferred.promise;
@@ -89,17 +89,7 @@ this.getData = function(userSearch) {
  				})
  				
 	}
-    
-    this.addFavorites = function (favorites, recipeId) {
-		var favoritesUrl = 'https://food-calendar.firebaseio.com/favorites';
-        var ref = new Firebase(favoritesUrl);
-        var favRef = $firebase(ref.child(favorites)).$asArray();
-        favRef.$add(recipeId).then(function(test) {
-        	console.log(test)
-        })
 
-
-    }
 
 	
 
