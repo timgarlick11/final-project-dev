@@ -23,6 +23,7 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
  //  };
   var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
   var ifNoImage = 'http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg'
+ $scope.noImage = 'http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg'
    
             // $scope.imageTest = defaultImage
     homeService.loadRecipes('monday').then(function(recipeId) {
@@ -31,8 +32,8 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
             $scope.recipeInfo = []
         homeService.getRecipe(recipeId).then(function(recipeResults) {
                 $scope.imageTest = recipeResults[2]
-                if ($scope.imageTest = null) {
-                    $scope.imageTest = ifNoImage
+                if ($scope.imageTest === null) {
+                    $scope.imageTest = ifNoImage;
                 }
                 $scope.recipeInfo.push(recipeResults)
                
@@ -45,7 +46,10 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
                 $scope.recipeInfo2 = []
         homeService.getRecipe(recipeId).then(function(recipeResults) {
                 console.log("number2: ", recipeResults)
-                $scope.imageTest2 = recipeResults[2]
+                $scope.imageTest2 = recipeResults[2];
+                  if ($scope.imageTest2 === null) {
+                    $scope.imageTest2 = ifNoImage;
+                }
                 $scope.recipeInfo2.push(recipeResults)
         
         })
@@ -56,7 +60,10 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
                 $scope.recipeInfo3 = []
         homeService.getRecipe(recipeId).then(function(recipeResults) {
                 console.log(recipeResults)
-                $scope.imageTest3 = recipeResults[2]
+                $scope.imageTest3 = recipeResults[2];
+                  if ($scope.imageTest3 === null) {
+                    $scope.imageTest3 = ifNoImage;
+                }
                 $scope.recipeInfo3.push(recipeResults)
         
         })
@@ -66,7 +73,10 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
                  $scope.recipeInfo4 = []       
             homeService.getRecipe(recipeId).then(function(recipeResults) {
                 console.log(recipeResults)
-                $scope.imageTest4 = recipeResults[2]
+                $scope.imageTest4 = recipeResults[2];
+                  if ($scope.imageTest4 === null) {
+                    $scope.imageTest4 = ifNoImage;
+                }
                 $scope.recipeInfo4.push(recipeResults)
             })
     })
@@ -75,7 +85,10 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
                  $scope.recipeInfo5 = []
             homeService.getRecipe(recipeId).then(function(recipeResults) {
                 console.log(recipeResults)
-                $scope.imageTest5 = recipeResults[2]
+                $scope.imageTest5 = recipeResults[2];
+                  if ($scope.imageTest5 === null) {
+                    $scope.imageTest5 = ifNoImage;
+                }
                 $scope.recipeInfo5.push(recipeResults)
             })
     })  
@@ -84,7 +97,10 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
                  $scope.recipeInfo6 = []
             homeService.getRecipe(recipeId).then(function(recipeResults) {
                 console.log(recipeResults)
-                $scope.imageTest6 = recipeResults[2]
+                $scope.imageTest6 = recipeResults[2];
+                  if ($scope.imageTest6 === null) {
+                    $scope.imageTest6 = ifNoImage;
+                }
                 $scope.recipeInfo6.push(recipeResults)
             })
     })  
@@ -93,7 +109,10 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
                  $scope.recipeInfo7 = []
             homeService.getRecipe(recipeId).then(function(recipeResults) {
                 console.log(recipeResults)
-                $scope.imageTest7 = recipeResults[2]
+                $scope.imageTest7 = recipeResults[2];
+                  if ($scope.imageTest7 === null) {
+                    $scope.imageTest7 = ifNoImage;
+                }
                 $scope.recipeInfo7.push(recipeResults)
             })
     }) 
