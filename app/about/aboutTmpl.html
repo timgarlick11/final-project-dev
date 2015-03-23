@@ -20,19 +20,19 @@
  	</div>
   	
 <div class='day-container'>
-	<div class='day one' ng-click="recipes ? test1 = !test1 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
-	<div class='day two' ng-click="recipes2 ? test2 = !test2 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
-	<div class='day three' ng-click="recipes3 ? test3 = !test3 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
-	<div class='day four' ng-click="recipes4 ? test4 = !test4 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
-	<div class='day five' ng-click="recipes5 ? test5 = !test5 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest5}}'></div>
-	<div class='day six' ng-click="recipes6 ? test6 = !test6 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest6}}'></div>
-	<div class='day seven' ng-click="recipes7 ? test7 = !test7 : false"><img style='width: 100%; height: 100%;' ng-src='{{imageTest7}}'></div>
+	<div class='day one' ng-click="recipes ? test1 = !test1 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest}}'></div>
+	<div class='day two' ng-click="recipes2 ? test2 = !test2 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest2}}'></div>
+	<div class='day three' ng-click="recipes3 ? test3 = !test3 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest3}}'></div>
+	<div class='day four' ng-click="recipes4 ? test4 = !test4 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest4}}'></div>
+	<div class='day five' ng-click="recipes5 ? test5 = !test5 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest5}}'></div>
+	<div class='day six' ng-click="recipes6 ? test6 = !test6 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest6}}'></div>
+	<div class='day seven' ng-click="recipes7 ? test7 = !test7 : false; noRecipe = !noRecipe"><img style='width: 100%; height: 100%;' ng-src='{{imageTest7}}'></div>
 </div>
  
  	
  		
  	<div class='greyedOut' ng-show='test1'>	
-  		<div class='info info-monday' ng-show="$parent.test1" ng-repeat="recipe in recipes = recipeInfo" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1"></i>
+  		<div class='info info-monday' ng-show="$parent.test1" ng-repeat="recipe in recipes = recipeInfo" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test1 = !$parent.test1; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -43,7 +43,7 @@
 	</div>  
 
 	<div class='greyedOut' ng-show='test2'>	
-  		<div class='info info-monday' ng-show="$parent.test2" ng-repeat="recipe in recipes2 = recipeInfo2" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test2 = !$parent.test2"></i>
+  		<div class='info info-monday' ng-show="$parent.test2" ng-repeat="recipe in recipes2 = recipeInfo2" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test2 = !$parent.test2; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -55,7 +55,7 @@
 
 	
 	<div class='greyedOut' ng-show='test3'>	
-  		<div class='info info-monday' ng-show="$parent.test3" ng-repeat="recipe in recipes3 = recipeInfo3" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test3 = !$parent.test3"></i>
+  		<div class='info info-monday' ng-show="$parent.test3" ng-repeat="recipe in recipes3 = recipeInfo3" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test3 = !$parent.test3; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -66,7 +66,7 @@
 	</div> 
 
 	<div class='greyedOut' ng-show='test4'>	
-  		<div class='info info-monday' ng-show="$parent.test4" ng-repeat="recipe in recipes4 = recipeInfo4" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test4 = !$parent.test4"></i>
+  		<div class='info info-monday' ng-show="$parent.test4" ng-repeat="recipe in recipes4 = recipeInfo4" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test4 = !$parent.test4; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -77,7 +77,7 @@
 	</div> 
 
 	<div class='greyedOut' ng-show='test5'>	
-  		<div class='info info-monday' ng-show="$parent.test5" ng-repeat="recipe in recipes5 = recipeInfo5" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test5 = !$parent.test5"></i>
+  		<div class='info info-monday' ng-show="$parent.test5" ng-repeat="recipe in recipes5 = recipeInfo5" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test5 = !$parent.test5; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -88,7 +88,7 @@
 	</div> 
 
 	<div class='greyedOut' ng-show='test6'>	
-  		<div class='info info-monday' ng-show="$parent.test6" ng-repeat="recipe in recipes6 = recipeInfo6" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test6 = !$parent.test6"></i>
+  		<div class='info info-monday' ng-show="$parent.test6" ng-repeat="recipe in recipes6 = recipeInfo6" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test6 = !$parent.test6; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -99,7 +99,7 @@
 	</div>  
 
 	<div class='greyedOut' ng-show='test7'>	
-  		<div class='info info-monday' ng-show="$parent.test7" ng-repeat="recipe in recipes7 = recipeInfo7" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test7 = !$parent.test7"></i>
+  		<div class='info info-monday' ng-show="$parent.test7" ng-repeat="recipe in recipes7 = recipeInfo7" ><i class="fa fa-times-circle-o fa-2x" ng-click="$parent.test7 = !$parent.test7; $parent.noRecipe = !$parent.noRecipe"></i>
  			<div class="calendarImage"><img style="height: 100%; width: 100%;"ng-src="{{recipe[2]}}"></div>
  				<div class="calendarTitle">{{recipe[5]}}</div>
  					<ul ng-repeat='firstItems in recipe[0]'>
@@ -109,6 +109,15 @@
   		</div>
 	</div>      
   
+  <div class="greyedOut1" ng-show='noRecipe'>
+  	<div class="infoQuestion">
+  		<h4 style="text-align: center; margin-bottom: 35px;"> would you like to add a recipe? </h4>
+  		<div class="redirectButtons">
+  			<button class="btn btn-default" ng-click="redirectHome()">Yes</button>
+  			<button class="btn btn-default" ng-click="noRecipe = !noRecipe">No</button>
+  		</div>
+  	</div>
+  </div>
 
 
 

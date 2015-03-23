@@ -1,6 +1,6 @@
 var app = angular.module('theHomeLife')
 
-app.controller('aboutController', function($scope, homeService, $firebase) {
+app.controller('aboutController', function($scope, homeService, $firebase, $location) {
 
 // var today = new Date();
 // var dd = today.getDate();
@@ -24,7 +24,7 @@ app.controller('aboutController', function($scope, homeService, $firebase) {
   var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
  
    
-            $scope.imageTest = defaultImage
+            // $scope.imageTest = defaultImage
     homeService.loadRecipes('monday').then(function(recipeId) {
         
         
@@ -99,17 +99,43 @@ $scope.removeDay = function(day) {
 
     homeService.removeDay(day).then(function(test) {
            console.log(test)
-           $scope.imageTest = defaultImage;
-           $scope.imageTest2 = defaultImage;
-           $scope.imageTest3 = defaultImage;
-           $scope.imageTest4 = defaultImage;
-           $scope.imageTest5 = defaultImage;
-           $scope.imageTest6 = defaultImage;
-           $scope.imageTest7 = defaultImage;
+           if (day === 'monday') {
+                $scope.imageTest = defaultImage;
+                $scope.recipeInfo = false;
+            }
+            if (day === 'tuesday') {
+                $scope.imageTest2 = defaultImage;
+                $scope.recipeInfo2 = false;
+            }
+            if (day === 'wednesday') {
+                $scope.imageTest3 = defaultImage;
+                $scope.recipeInfo3 = false;
+            }
+            if (day === 'thursday') {
+                $scope.imageTest4 = defaultImage;
+                $scope.recipeInfo4 = false;
+            }
+            if (day === 'friday') {
+                $scope.imageTest5 = defaultImage;
+                $scope.recipeInfo5 = false;
+            }
+             if (day === 'saturday') {
+                $scope.imageTest6 = defaultImage;
+                $scope.recipeInfo6 = false;
+            }
+             if (day === 'sunday') {
+                $scope.imageTest7 = defaultImage;
+                $scope.recipeInfo7 = false;
+            }
+       
 
           
            // $scope.recipeInfo = [[{Name:null},{Quantity:0},{Unit:null}], null];
     }) 
+}
+
+$scope.redirectHome = function() {
+    $location.path('/');
 }
 
 

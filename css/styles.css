@@ -9,8 +9,8 @@ margin: 0;
 /** {
   border: 1px solid black;
   box-sizing: border-box;
-}
-*/.nav {
+}*/
+.nav {
 
 	background-color: 
 	hsla(12,85%,43%,.75); 
@@ -417,6 +417,18 @@ border-radius: 5px;
   position: absolute;
   display: flex;
   flex-flow: wrap;
+  z-index: 2;
+  background:hsla(70,8%,15%,.2);
+  /*-webkit-filter: grayscale(0.5) blur(2px);*/
+
+}
+.greyedOut1 {
+  top: 0px;
+  height:100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-flow: wrap;
   z-index: 1;
   background:hsla(70,8%,15%,.7);
   /*-webkit-filter: grayscale(0.5) blur(2px);*/
@@ -446,6 +458,26 @@ border-radius: 5px;
   overflow: auto;
  
 }
+.infoQuestion {
+  margin: 0 auto;
+  width: 350px;
+  height: 20%;
+  background: white;
+  position: relative;
+  top: 195px;
+  z-index: 2;
+  box-shadow: 0 0 10px hsla(0,0%,17%,1);
+  overflow: auto;
+ 
+}
+.redirectButtons {
+  margin: 0 auto;
+  width: 30%;
+  box-sizing: border-box;
+  /*border: 1px solid black;*/
+  display: flex;
+  justify-content: space-between;
+}
 
 .fa-times-circle-o {
   position: fixed;
@@ -472,6 +504,8 @@ border-radius: 5px;
   width: 80%;
   margin: 20px auto;
 }
+
+
 /*.RecipeDayInfo:hover{
 
   zoom: 1.2;
