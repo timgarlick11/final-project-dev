@@ -37,11 +37,6 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
                     homeService.getRecipe(resultArr[i]).then(function (recipeResults) {
                         console.log('recipeResults1: ',recipeResults);
                         $scope.recipes.push(recipeResults);
-
-                        console.log("=====================PRINT RECIPE====================");
-
-                        var directions = $scope.recipes[1][1].split("/(\d+)/g");
-                        console.log(directions);
                       
                     }, function(err) {
                             console.log('FAILED!!!: ', err);
@@ -73,9 +68,19 @@ app.controller('homeController', function ($scope, homeService, $firebase, $loca
             }
         })
     };
-         
-
-
+    
+    var preLoaded = function() {
+        var preLoad = [158384, 167421, 168641]
+        $scope.recipes = [];
+        
+        for (var i = 0; i < preLoad.length; i++) {
+            homeService.getRecipe(preLoad[i]).then(function (recipeResults) {
+                console.log('recipeResults1: ',recipeResults);
+                $scope.recipes.push(recipeResults);
+            });         
+        };
+    };
+    preLoaded();
    
 
 

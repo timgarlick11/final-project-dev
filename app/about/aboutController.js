@@ -22,7 +22,7 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
  //    $(event.target).find('.info').toggle();
  //  };
   var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
- 
+  var ifNoImage = 'http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg'
    
             // $scope.imageTest = defaultImage
     homeService.loadRecipes('monday').then(function(recipeId) {
@@ -31,6 +31,9 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
             $scope.recipeInfo = []
         homeService.getRecipe(recipeId).then(function(recipeResults) {
                 $scope.imageTest = recipeResults[2]
+                if ($scope.imageTest = null) {
+                    $scope.imageTest = ifNoImage
+                }
                 $scope.recipeInfo.push(recipeResults)
                
 
