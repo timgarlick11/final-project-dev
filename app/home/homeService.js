@@ -90,6 +90,16 @@ this.getData = function(userSearch) {
  				
 	}
 
+		this.addFavorites = function (favorites, recipeId) {
+                var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+                var ref = new Firebase(firebaseUrl);
+                var dateRef = $firebase(ref.child(favorites)).$asArray();
+                var dateRemove = $firebase(ref);
+ 				dateRef.$add(recipeId).then(function(test) {
+ 					console.log(test)
+ 				})
+ 				
+	}
 
 	
 

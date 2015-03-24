@@ -480,9 +480,8 @@ border-radius: 5px;
 }
 
 .fa-times-circle-o {
-  position: fixed;
-  top: 75px;
-  right: 335px;
+  float: right;
+  margin-right: 2px;
 
 }
 .fa-times-circle-o:hover{
