@@ -24,6 +24,7 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
   var defaultImage = 'http://bed56888308e93972c04-0dfc23b7b97881dee012a129d9518bae.r34.cf1.rackcdn.com/sites/default/files/imagecache/standard/imagefield_default_images/no-recipe-image.jpg'
   var ifNoImage = 'http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg'
  $scope.noImage = 'http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg'
+
    
             // $scope.imageTest = defaultImage
     homeService.loadRecipes('monday').then(function(recipeId) {
@@ -159,6 +160,14 @@ $scope.removeDay = function(day) {
 $scope.redirectHome = function() {
     $location.path('/');
 }
+ $scope.imageTest = defaultImage;
+ $scope.imageTest2 = defaultImage;
+ $scope.imageTest3 = defaultImage;
+ $scope.imageTest4 = defaultImage;
+ $scope.imageTest5 = defaultImage;
+ $scope.imageTest6 = defaultImage;
+ $scope.imageTest7 = defaultImage;
+
 
 
  

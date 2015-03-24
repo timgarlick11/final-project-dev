@@ -1,11 +1,11 @@
-	
+<!-- 	
 <button ng-click="removeDay('monday')"></button>
 <button ng-click="removeDay('tuesday')"></button>
 <button ng-click="removeDay('wednesday')"></button>
 <button ng-click="removeDay('thursday')"></button>
 <button ng-click="removeDay('friday')"></button>
 <button ng-click="removeDay('saturday')"></button>
-<button ng-click="removeDay('sunday')"></button>
+<button ng-click="removeDay('sunday')"></button> -->
 
 				
 	
@@ -39,8 +39,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
- 			<div class="trash"><i class="fa fa-trash-o"></i></div>
- 			<div class="closeBottom"><a>close</a>
+ 			<div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('monday'); $parent.test1 = !test1; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div>  
 
@@ -52,6 +51,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
+      <div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('tuesday'); $parent.test2 = !test2; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div> 
 
@@ -64,6 +64,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
+      <div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('wednesday'); $parent.test3 = !test3; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div> 
 
@@ -75,6 +76,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
+      <div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('thursday'); $parent.test4 = !test4; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div> 
 
@@ -86,6 +88,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
+      <div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('friday'); $parent.test5 = !test5; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div> 
 
@@ -97,6 +100,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
+      <div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('saturday'); $parent.test6 = !test6; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div>  
 
@@ -108,6 +112,7 @@
               			<li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
            			</ul>
  			<div class="calendarDirections" style="text-align: left;">{{recipe[1]}}</div>
+      <div class="trash"><i class="fa fa-trash-o" ng-click="removeDay('sunday'); $parent.test7 = !test7; $parent.noRecipe = !$parent.noRecipe"></i></div>
   		</div>
 	</div>      
   
