@@ -152,10 +152,25 @@ z-index:2;
   width: 50%;
   position: absolute;
 margin: 0 auto;
-top: 20px;
-right: 275px;
-float: left;
+top: 550px;
+right: 299px;
+/*float: left;*/
   
+}
+.homeDayContainer {
+  position: absolute;
+  top: 10px;
+  width: 50%;
+  height: 70px;
+  right:320px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.homeDay {
+  height:100%;
+  width:13%;
+  border: 1px solid red;
 }
 .col-sm-6.col-md-4 {
 	-webkit-perspective: 800;
@@ -413,9 +428,13 @@ border-radius: 5px;
     overflow: auto;
 }
 
-/*.fa-heart:active { 
+.fa-heart:active{ 
    color: red;
-}*/
+}
+
+.redHeart {
+  background-color: red;
+}
 .greyedOut {
   top: 0px;
   height:101%;
