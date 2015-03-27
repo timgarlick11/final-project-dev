@@ -27,13 +27,20 @@
    <img src='http://4.bp.blogspot.com/_pFTtvG46Z48/TPDX4O7-GII/AAAAAAAAAWw/q5TH_5aZenw/s1600/IMG_6819.jpg' style='height: 100%; width: 100%'>
 
 <div class="homeDayContainer">
-  <div class="homeDay mon"></div>
-  <div class="homeDay mon"></div>
-  <div class="homeDay mon"></div>
-  <div class="homeDay mon"></div>
-  <div class="homeDay mon"></div>
-  <div class="homeDay mon"></div>
-  <div class="homeDay mon"></div>
+  <div class="homeDay">Mon
+    <img src="{{image}}"ng-src="{{imageTest}}" ng-click='imageTest ? redirectCalendar(): false'></div>
+  <div class="homeDay">Tues
+    <img src="{{image}}"ng-src="{{imageTest2}}" ng-click='imageTest2 ? redirectCalendar(): false'>></div>
+  <div class="homeDay">Weds
+    <img src="{{image}}"ng-src="{{imageTest3}}" ng-click='imageTest3 ? redirectCalendar(): false'>></div>
+  <div class="homeDay">Thurs
+   <img src="{{image}}" ng-src="{{imageTest4}}" ng-click='imageTest4 ? redirectCalendar(): false'>></div>
+  <div class="homeDay">Fri
+   <img src="{{image}}" ng-src="{{imageTest5}}" ng-click='imageTest5 ? redirectCalendar(): false'>></div>
+  <div class="homeDay">Sat
+   <img src="{{image}}"  ng-src="{{imageTest6}}" ng-click='imageTest6 ? redirectCalendar(): false'>></div>
+  <div class="homeDay">Sun
+   <img src="{{image}}" ng-src="{{imageTest7}}" ng-click='imageTest7 ? redirectCalendar(): false'>></div>
 </div>
 
 
@@ -44,8 +51,8 @@
       <div class="face front"> 
         <div class='secondImage'>
               <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
-              ng-src='{{recipe[2]}}'>
-         <div class='title'>{{recipe[5]}}</div>
+              ng-src='{{recipe[2]}}' ng-mouseenter="foodTitle = !foodTitle" ng-mouseleave="foodTitle = !foodTitle">
+         <div class='title' ng-show="foodTitle">{{recipe[5]}}</div>
 
           <div class='ratings'>
             <div class='icons'>

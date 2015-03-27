@@ -1,3 +1,10 @@
+/** {
+  border: 1px solid black;
+  box-sizing: border-box;
+}*/
+
+/* global css*/
+
 html, body {
 
 width:100%;
@@ -6,10 +13,7 @@ margin: 0;
 
 
 }
-/** {
-  border: 1px solid black;
-  box-sizing: border-box;
-}*/
+
 .nav {
 
 	background-color: 
@@ -30,13 +34,15 @@ margin: 0;
 
 
 .secondImage {
-  position:relative;
-  height: 175px;
-  width: 150px;
-  box-shadow: 0 0 5px hsla(0,0%,17%,1);
-  border-width: 1px;
+    position: relative;
+  height: 290px;
+  width: 300px;
+  top: -1px;
+  right: 1px;
+  /* box-shadow: 0 0 5px hsla(0,0%,17%,1); */
+  border-width: 0px;
   color: black;
-  margin: 0 auto;
+  margin: 0px auto 0 auto;
   z-index: 3;
 }
 .secondImage > img {
@@ -44,25 +50,28 @@ margin: 0;
 	width: 100%;
 }
 .title {
-  position: absolute;
-  height: 50%;
-  width: 135%;
-  margin: 20px auto 0 auto;
+   position: absolute;
+  height: 17%;
+  width: 100%;
+  margin: -49px auto 0 auto;
   text-align: center;
   font-size: 2em;
-  right: -25px;
+  padding: 5px;
+  color: white;
+  right: 0px;
   overflow: scroll;
+  background: hsla(0,0%,0%,.3);
 }
 .ratings {
-  position: absolute;
+    position: absolute;
   height: 110px;
-  top: 239px;
-  right:-75px;
-  background:hsla(70,8%,15%,.85);
+  top: 250px;
+  right: 0px;
+  background: hsla(0,0%,0%,.8);
   width: 300px;
-  margin: 50px auto;
-  box-shadow: 0 0 2px hsla(0,0%,17%,1);
-  /*z-index:5;*/
+  margin: 40px auto;
+  /* box-shadow: 0 0 2px hsla(0,0%,17%,1); */
+  /* z-index: 5; */
 }
 
 .inputDays {
@@ -104,16 +113,17 @@ top:42px;
 
 height: 667px;
 width: 100%;
-z-index:2;
+z-index:1;
 }
 .top-container {
-  position: relative;
+  position: absolute;
   top: 150px;
   display: flex;
   justify-content: space-between;
   width: 95%;
+  left: 32px;
   margin: 0 auto;
-  z-index:4;
+  z-index:2;
 }
 
 
@@ -129,14 +139,15 @@ z-index:2;
  }
  
 .day-container {
- position: relative;
-  top: 150px;
+ position: absolute;
+ left: 32px;
+  top: 170px;
   height:25%;
   width:95%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  z-index:4;
+  z-index:2;
 }
  .day {
  	box-shadow: 0 0 5px hsla(0,0%,17%,1);
@@ -152,25 +163,31 @@ z-index:2;
   width: 50%;
   position: absolute;
 margin: 0 auto;
-top: 550px;
+top: 20px;
 right: 299px;
 /*float: left;*/
   
 }
 .homeDayContainer {
   position: absolute;
-  top: 10px;
+  top: 540px;
   width: 50%;
   height: 70px;
-  right:320px;
+  right:312px;
   display: flex;
   justify-content: space-between;
 
 }
 .homeDay {
-  height:100%;
+  height:120%;
   width:13%;
-  border: 1px solid red;
+  background:hsla(12,86%,42%,1);
+  box-shadow: 0 0 10px hsla(0,0%,17%,1);
+  text-align: center;
+}
+.homeDay > img {
+ width:100%; 
+ height: 76%;
 }
 .col-sm-6.col-md-4 {
 	-webkit-perspective: 800;
@@ -244,6 +261,7 @@ border-radius: 5px;
    top: 50px;*/
    display: flex;
    justify-content: space-between ;
+     margin-bottom: 20px;
 
   
 }
@@ -287,11 +305,7 @@ border-radius: 5px;
     z-index: 99;
     overflow: auto;
 }
-/*i {
-  position: relative;
-  left: 100px;
 
-}*/
 .icons {
   margin: 10px auto;
   width: 54%;
@@ -341,92 +355,6 @@ height: 30px;
 width: 50%;
   z-index: 3;
 }
-/*.star-rating {
-  line-height:32px;
-  font-size:1em;
-  cursor: pointer;
-}*/
-
-
-.card2 {
-  box-shadow: 0 0 10px hsla(0,0%,17%,1);
-  border-radius: 5px;
-  margin-top: 10px;
-
-
-}
-.face2 {
-  border-radius: 5px;
-}
-.card2:hover {
-  box-shadow: 0 0 15px hsla(206,65%,51%,1);
-}
-
-.flip-container2 {
-   position: absolute;
-  top: 80px;
-  right: 60px;
-border-radius: 5px;
-  height: 100%;
-  width: 90%;
-  margin: 20px auto;
-
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-}
-.flip2 {
-  -webkit-perspective: 800;
-   width: 300px;
-   height: 400px;
-     margin-bottom: 20px;
-  /* position: relative;
-   left: 80px;
-   top: 50px;*/
-   display: flex;
-   justify-content: space-between ;
-
-  
-}
-.flip2 .card2.flipped {
-  -webkit-transform: rotatey(-180deg);
-}
-.flip2 .card2 {
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: 1s;
-}
-.flip2 .card2 .face2 {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-backface-visibility: hidden ;
-  z-index: 9999;
-    font-family: Georgia;
-    font-size: 1em;
-   
-   /* line-height: 200px;*/
-}
-.flip2 .card2 .front2 {
-  position: absolute;
-  z-index: 1;
-    background: white;
-    color: white;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-.flip2 .card2 .back2 {
-  -webkit-transform: rotatey(-180deg);
-  position: absolute;
-  margin: 0 auto;
-    background: white;
-    color: black;
-    cursor: pointer;
-    border: 1px solid transparent;
-    z-index: 99;
-    overflow: auto;
-}
 
 .fa-heart:active{ 
    color: red;
@@ -442,7 +370,7 @@ border-radius: 5px;
   position: absolute;
   display: flex;
   flex-flow: wrap;
-  z-index: 2;
+  z-index: 9999;
   background:hsla(70,8%,15%,.2);
   /*-webkit-filter: grayscale(0.5) blur(2px);*/
 
@@ -454,7 +382,7 @@ border-radius: 5px;
   position: absolute;
   display: flex;
   flex-flow: wrap;
-  z-index: 1;
+  z-index: 7;
   background:hsla(70,8%,15%,.7);
   /*-webkit-filter: grayscale(0.5) blur(2px);*/
 
@@ -538,27 +466,7 @@ border-radius: 5px;
 
 
 
-/*.RecipeDayInfo:hover{
 
-  zoom: 1.2;
-}*/
-
-
-/*
-<div id="checkboxes">
-    <div class="checkboxgroup">
-        <label for="my_radio_button_id1">My Label1</label>
-        <input type="radio" name="radio" id="my_radio_button_id1" />
-    </div>
-    <div class="checkboxgroup">
-        <label for="my_radio_button_id2">My Label2</label>
-        <input type="radio" name="radio" id="my_radio_button_id2" />
-    </div>
-    <div class="checkboxgroup">
-        <label for="my_radio_button_id3">My Label3</label>
-        <input type="radio" name="radio" id="my_radio_button_id3" />
-    </div>
-</div>*/
 
 
 
