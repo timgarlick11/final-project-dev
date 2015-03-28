@@ -164,7 +164,7 @@ z-index:1;
   position: absolute;
 margin: 0 auto;
 top: 20px;
-right: 299px;
+right: 306px;
 /*float: left;*/
   
 }
@@ -173,7 +173,7 @@ right: 299px;
   top: 540px;
   width: 50%;
   height: 70px;
-  right:312px;
+  right:320px;
   display: flex;
   justify-content: space-between;
 
@@ -184,10 +184,11 @@ right: 299px;
   background:hsla(12,86%,42%,1);
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
   text-align: center;
+  font-size:10px;
 }
 .homeDay > img {
  width:100%; 
- height: 76%;
+ height: 84%;
 }
 .col-sm-6.col-md-4 {
 	-webkit-perspective: 800;
@@ -243,7 +244,7 @@ p {
 .flip-container {
    position: absolute;
   top: 80px;
-  right: 60px;
+  right: 65px;
 border-radius: 5px;
   height: 60%;
   width: 90%;
