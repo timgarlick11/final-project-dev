@@ -19,6 +19,7 @@ margin: 0;
 	background-color: hsla(12,85%,43%,.75); 
 	margin: 0;
   border: 1px solid hsla(12,85%,43%,.15); 
+  box-sizing:border-box;
 
   
 }
@@ -51,6 +52,8 @@ margin: 0;
 .secondImage > img {
 	height: 100%;
 	width: 100%;
+   border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
 }
 .title {
    position: absolute;
@@ -73,6 +76,8 @@ margin: 0;
   background: hsla(0,0%,0%,.8);
   width: 300px;
   margin: 40px auto;
+    border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
   /* box-shadow: 0 0 2px hsla(0,0%,17%,1); */
   /* z-index: 5; */
 }
@@ -112,7 +117,7 @@ overflow: auto;
 }
 .displayImage {
   position: absolute;
-top:42px;
+top:44px;
 height: 667px;
 width: 100%;
 z-index:1;
@@ -164,6 +169,7 @@ z-index:1;
  .day:hover {
   box-shadow: 0 0 15px hsla(11,59%,47%,1);;
  }
+
  .userSearch {
  display: flex;
  justify-content: flex-start;
@@ -192,6 +198,10 @@ right: 306px;
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
   text-align: center;
   font-size:10px;
+}
+.homeDay:hover {
+  box-shadow: 0 0 15px hsla(11,59%,47%,1);
+
 }
 .homeDay > img {
  width:100%; 
@@ -242,11 +252,11 @@ body {
 }
 .card {
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
-  border-radius: 5px;
+  border-radius: 3px;
 
 }
 .face {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .card:hover {
   box-shadow: 0 0 15px hsla(11,59%,47%,1);
@@ -355,7 +365,8 @@ box-shadow:0 0 3px hsla(0,0%,17%,1);
   position: absolute;
   height: 665px;
   width: 100%;
-  top: 41px;
+  top: 44px;
+
 
   
 }
@@ -372,9 +383,9 @@ width: 50%;
    color: red;
 }
 
-.redHeart {
+/*.redHeart {
   background-color: red;
-}
+}*/
 .greyedOut {
   top: 0px;
   height:101%;
@@ -460,8 +471,8 @@ width: 50%;
 }
 
 .calendarImage {
-  height: 25%;
-  width: 20%;
+  height: 50%;
+  width: 50%;
   margin: 10px auto 10px auto;
   box-shadow: 0 0 2px hsla(0,0%,17%,1);
 }
@@ -474,7 +485,20 @@ width: 50%;
 .calendarDirections {
   width: 80%;
   margin: 20px auto;
+  text-align: center;
 }
+.calendarDirections > a {
+  margin: 50px;
+}
+.redHeart > .fa-heart {
+  position: absolute;
+  right: 203px;
+  top:300px;
+  color:red;
+  z-index:9;
+}
+
+
 
 
 

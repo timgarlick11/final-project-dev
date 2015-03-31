@@ -2,7 +2,7 @@ var app = angular.module('theHomeLife')
  
 app.controller('homeController', function ($scope, homeService, $firebase, $location) {
  
-
+var imageNull = "http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg" 
 
 
 
@@ -16,24 +16,45 @@ $scope.addRecipe = function (day, recipeId, favorites) {
             homeService.getRecipe(recipeId).then(function (recipeResults) {
                 if (day === 'monday') {
                     $scope.imageTest = recipeResults[2];
+                    if (recipeResults[2] === null) {
+                        $scope.imageTest = imageNull;
+                    }
                 }
                 if (day === 'tuesday') {
                     $scope.imageTest2 = recipeResults[2];
+                     if (recipeResults[2] === null) {
+                        $scope.imageTest2 = imageNull;
+                    }
                 }
                  if (day === 'wednesday') {
                     $scope.imageTest3 = recipeResults[2];
+                     if (recipeResults[2] === null) {
+                        $scope.imageTest3 = imageNull;
+                    }
                 }
                  if (day === 'thursday') {
                     $scope.imageTest4 = recipeResults[2];
+                     if (recipeResults[2] === null) {
+                        $scope.imageTest4 = imageNull;
+                    }
                 }
                  if (day === 'friday') {
                     $scope.imageTest5 = recipeResults[2];
+                     if (recipeResults[2] === null) {
+                        $scope.imageTest5 = imageNull;
+                    }
                 }
                  if (day === 'saturday') {
                     $scope.imageTest6 = recipeResults[2];
+                     if (recipeResults[2] === null) {
+                        $scope.imageTest6 = imageNull;
+                    }
                 }
                  if (day === 'sunday') {
                     $scope.imageTest7 = recipeResults[2];
+                     if (recipeResults[2] === null) {
+                        $scope.imageTest7 = imageNull;
+                    }
                 }
             }); 
         });
@@ -115,6 +136,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest = imageNull;
+                    }
         });
     }); 
      homeService.loadRecipes('tuesday').then(function(recipeId) {
@@ -122,6 +146,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest2 = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest2 = imageNull;
+                    }
         });
     }); 
       homeService.loadRecipes('wednesday').then(function(recipeId) {
@@ -129,6 +156,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest3 = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest3 = imageNull;
+                    }
         });
     }); 
        homeService.loadRecipes('thursday').then(function(recipeId) {
@@ -136,6 +166,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest4 = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest4 = imageNull;
+                    }
         });
     }); 
         homeService.loadRecipes('friday').then(function(recipeId) {
@@ -143,6 +176,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest5 = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest5 = imageNull;
+                    }
         });
     }); 
          homeService.loadRecipes('saturday').then(function(recipeId) {
@@ -150,6 +186,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest6 = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest6 = imageNull;
+                    }
         });
     }); 
           homeService.loadRecipes('sunday').then(function(recipeId) {
@@ -157,6 +196,9 @@ $scope.addRecipe = function (day, recipeId, favorites) {
         homeService.getRecipe(recipeId).then(function (recipeResults) {
                  
                  $scope.imageTest7 = recipeResults[2]
+                  if (recipeResults[2] === null) {
+                        $scope.imageTest7 = imageNull;
+                    }
         });
     }); 
 

@@ -80,16 +80,19 @@ this.getData = function(userSearch) {
 		})
         return deferred.promise
 	};
-this.removeFavorite = function() { 
+this.removeFavorite = function(id) { 
   
+//     var firebaseUrl = 'https://food-calendar.firebaseio.com/';
+//     return $firebase(new Firebase(firebaseUrl + 'favorites'))
+// }
+    var deferred = $q.defer() 
     var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-    return $firebase(new Firebase(firebaseUrl + 'favorites'))
+    var ref = new Firebase(firebaseUrl);
+    var dateRef = $firebase(ref.child('favorites')).$asArray();
+    var testerRef = $firebase(ref)
+    console.log(testerRef)
+    testerRef.$remove("favorites.$value")
 }
-  //   var deferred = $q.defer() 
-  //   var firebaseUrl = 'https://food-calendar.firebaseio.com/';
-    // var ref = new Firebase(firebaseUrl);
-  //   var dateRef = $firebase(ref.child('favorites')).$asArray();
-  //   var testerRef = $firebase(ref)
  
   // dateRef.$loaded().then(function(test) {
   //  var tester = dateRef[0].$value;
@@ -100,11 +103,11 @@ this.removeFavorite = function() {
 
   
       
-      // dateRef.$remove().then(function(test) {
-      // console.log(test)
-      //     deferred.resolve(test)
-      // })
-      //   return deferred.promise
+  //     dateRef.$remove().then(function(test) {
+  //     console.log(test)
+  //         deferred.resolve(test)
+  //     })
+  //       return deferred.promise
 
 
   	this.addData = function (day, recipeId) {

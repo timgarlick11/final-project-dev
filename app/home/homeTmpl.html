@@ -50,15 +50,16 @@
     <div class="card" ng-class="{'flipped':isFlipped}" > 
       <div class="face front"> 
         <div class='secondImage'>
+           <div class='redHeart'><i class="fa fa-heart fa-2x" ng-show='showRedHeart'></i></div>
               <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
-              ng-src='{{recipe[2]}}' ng-mouseenter="foodTitle = !foodTitle" ng-mouseleave="foodTitle = !foodTitle">
-         <div class='title' ng-show="foodTitle">{{recipe[5]}}</div>
+              ng-src='{{recipe[2]}}'><!-- ng -->
+         <div class='title'>{{recipe[5]}}</div> <!-- ng-show="foodTitle" -->
 
           <div class='ratings'>
             <div class='icons'>
-             <i class="fa fa-heart fa-2x" ng-click="addFavorites('favorites', recipe[9])"></i>
+             <i class="fa fa-heart fa-2x" ng-click="addFavorites('favorites', recipe[9]); showRedHeart = !showRedHeart"></i>
              <i class="fa fa-calendar fa-2x" ng-click='myVar = !myVar; starDisplay = !starDisplay'></i>
-             <i class="fa fa-shopping-cart fa-2x"></i>
+        
             </div>
               <div class='weekDays' ng-show='myVar'>
                

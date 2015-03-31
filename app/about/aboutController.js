@@ -118,6 +118,11 @@ app.controller('aboutController', function($scope, homeService, $firebase, $loca
             })
     }) 
 
+      $scope.addFavorites = function (favorites, recipeId) {
+        
+        homeService.addFavorites(favorites, recipeId)
+    };
+
 $scope.removeDay = function(day) {
 
     homeService.removeDay(day).then(function(test) {

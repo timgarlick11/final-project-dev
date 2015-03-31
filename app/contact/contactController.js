@@ -1,8 +1,8 @@
 var app = angular.module('theHomeLife')
 
 app.controller('contactController', function($scope, homeService) {
-var recipeSync = homeService.removeFavorite();
-$scope.recipes1 = recipeSync.$asArray()
+// var recipeSync = homeService.removeFavorite();
+// $scope.recipes1 = recipeSync.$asArray()
 
   	homeService.loadFavorites('favorites').then(function(recipeId) {
   		$scope.recipes = []
@@ -28,12 +28,18 @@ $scope.recipes1 = recipeSync.$asArray()
             });
     }; 
 
-  $scope.deleteFavorite = function(id) {
-      console.log(id[9])
-      console.log($scope.recipes1)
-     $scope.recipes1.$remove($value.id[9]);
+  // $scope.deleteFavorite = function(id) {
+  //     console.log(id[9])
+  //     console.log($scope.recipes1)
+  //    $scope.recipes1.$remove($value.id[9]);
 
-  } 
+  // } 
+
+$scope.deleteFav = function(id) {
+  console.log(id);
+  homeService.removeFavorite(id)
+  $scope.recipes = [];
+}
 
 })
  
