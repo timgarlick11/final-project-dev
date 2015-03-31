@@ -8,13 +8,12 @@
     <div class="card" ng-class="{'flipped':isFlipped}" > 
       <div class="face front"> 
         <div class='secondImage'>
+          <button ng-click='deleteFavorite(recipe)'></button>
               <img ng-click="isFlipped=!isFlipped" src='http://redirect.bigoven.com/pics/rs/256/recipe-no-image.jpg' 
               ng-src='{{recipe[2]}}' ng-mouseenter="foodTitle = !foodTitle" ng-mouseleave="foodTitle = !foodTitle">
          <div class='title' ng-show="foodTitle">{{recipe[5]}}</div>
-
           <div class='ratings'>
             <div class='icons'>
-             <i class="fa fa-heart fa-2x" ng-click="addFavorites('favorites', recipe[9])"></i>
              <i class="fa fa-calendar fa-2x" ng-click='myVar = !myVar; starDisplay = !starDisplay'></i>
              <i class="fa fa-shopping-cart fa-2x"></i>
             </div>
@@ -72,6 +71,7 @@
             <ul ng-repeat='firstItems in recipe[0]'>
               <li style='width: 100%; height: 100%'>{{firstItems.Name}} {{firstItems.Quantity}} {{firstItems.Unit}} </li>
             </ul>
+
           </div>
         </div>        
     </div> 

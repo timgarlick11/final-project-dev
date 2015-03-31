@@ -55,7 +55,7 @@ $scope.addRecipe = function (day, recipeId, favorites) {
 
            
                 $scope.recipes = [];
-               
+                       
 
                 for (var i = 0; i < (resultArr.length >= 3 ? 3 : resultArr.length); i++) {
                 

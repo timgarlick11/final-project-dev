@@ -16,9 +16,10 @@ margin: 0;
 
 .nav {
 
-	background-color: 
-	hsla(12,85%,43%,.75); 
+	background-color: hsla(12,85%,43%,.75); 
 	margin: 0;
+  border: 1px solid hsla(12,85%,43%,.15); 
+
   
 }
 
@@ -28,13 +29,14 @@ margin: 0;
  	color: hsla(320,100%,98%,1);
  	margin: 0 auto;
 
+
  }
 
 
 
 
 .secondImage {
-    position: relative;
+  position: relative;
   height: 290px;
   width: 300px;
   top: -1px;
@@ -44,6 +46,7 @@ margin: 0;
   color: black;
   margin: 0px auto 0 auto;
   z-index: 3;
+  transition: all .5s ease-in-out;
 }
 .secondImage > img {
 	height: 100%;
@@ -108,13 +111,14 @@ overflow: auto;
 
 }
 .displayImage {
-position: absolute;
+  position: absolute;
 top:42px;
-
 height: 667px;
 width: 100%;
 z-index:1;
+
 }
+
 .top-container {
   position: absolute;
   top: 150px;
@@ -156,6 +160,9 @@ z-index:1;
  
  	background-color: hsla(61,66%,85%,1);
  	
+ }
+ .day:hover {
+  box-shadow: 0 0 15px hsla(11,59%,47%,1);;
  }
  .userSearch {
  display: flex;
@@ -218,16 +225,20 @@ p {
 
 
 
-/*body {
- background: hsla(36,11%,18%,.5); 
+body {
  
-}*/
+  background: hsla(36,11%,18%,.5);
+  background-size: cover;
+  
+ 
+}
 #wrapper {
-  height:3000px;
+  height:100%;
   width: 100%;
-  position:absolute;
+ 
   top:42px;
-   background: hsla(36,11%,18%,.5);
+
+
 }
 .card {
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
