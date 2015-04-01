@@ -162,6 +162,45 @@ $scope.removeDay = function(day) {
     }) 
 }
 
+var weekArr = ['monday','tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    
+$scope.clearWeek = function() {
+    for (var i = 0; i < weekArr.length; i++) {
+      
+        homeService.removeDay(weekArr[i]).then(function(test) {
+
+                $scope.imageTest = defaultImage;
+                $scope.recipeInfo = false;
+         
+                $scope.imageTest2 = defaultImage;
+                $scope.recipeInfo2 = false;
+            
+                $scope.imageTest3 = defaultImage;
+                $scope.recipeInfo3 = false;
+           
+                $scope.imageTest4 = defaultImage;
+                $scope.recipeInfo4 = false;
+          
+                $scope.imageTest5 = defaultImage;
+                $scope.recipeInfo5 = false;
+           
+                $scope.imageTest6 = defaultImage;
+                $scope.recipeInfo6 = false;
+           
+                $scope.imageTest7 = defaultImage;
+                $scope.recipeInfo7 = false;
+            
+
+        })
+    }
+    
+};
+
+
+
+
+
+
 $scope.redirectHome = function() {
     $location.path('/');
 }

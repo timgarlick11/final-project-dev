@@ -52,8 +52,8 @@ margin: 0;
 .secondImage > img {
 	height: 100%;
 	width: 100%;
-   border-top-right-radius: 3px;
-    border-top-left-radius: 3px;
+   border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 .title {
    position: absolute;
@@ -67,6 +67,7 @@ margin: 0;
   right: 0px;
   overflow: scroll;
   background: hsla(0,0%,0%,.3);
+  font-size: sans-serif;
 }
 .ratings {
     position: absolute;
@@ -76,8 +77,8 @@ margin: 0;
   background: hsla(0,0%,0%,.8);
   width: 300px;
   margin: 40px auto;
-    border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   /* box-shadow: 0 0 2px hsla(0,0%,17%,1); */
   /* z-index: 5; */
 }
@@ -151,7 +152,7 @@ z-index:1;
  position: absolute;
  left: 32px;
   top: 170px;
-  height:25%;
+  height:23%;
   width:95%;
   margin: 0 auto;
   display: flex;
@@ -167,7 +168,7 @@ z-index:1;
  	
  }
  .day:hover {
-  box-shadow: 0 0 15px hsla(11,59%,47%,1);;
+  box-shadow: 0 0 15px hsla(11,59%,47%,1);
  }
 
  .userSearch {
@@ -251,12 +252,12 @@ body {
 
 }
 .card {
-  box-shadow: 0 0 10px hsla(0,0%,17%,1);
-  border-radius: 3px;
+  box-shadow: 0 0 8px hsla(0,0%,17%,1);
+  border-radius: 5px;
 
 }
 .face {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .card:hover {
   box-shadow: 0 0 15px hsla(11,59%,47%,1);
@@ -330,9 +331,12 @@ border-radius: 5px;
 
 .icons {
   margin: 10px auto;
-  width: 54%;
+  width: 34%;
+  margin: 0 auto;
+  padding: 10px;
+
  display: flex;
- justify-content: space-between;
+ justify-content: space-around;
 }
 
 .weekDays {
@@ -410,6 +414,19 @@ width: 50%;
   /*-webkit-filter: grayscale(0.5) blur(2px);*/
 
 }
+.greyedOut2 {
+  top: 0px;
+  height:100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-flow: wrap;
+  z-index: 7;
+  background:hsla(70,8%,15%,.7);
+  /*-webkit-filter: grayscale(0.5) blur(2px);*/
+
+}
+
 
 /*.secondGreyedOut {
   position: absolute;
@@ -440,7 +457,7 @@ width: 50%;
   height: 20%;
   background: white;
   position: relative;
-  top: 195px;
+  top: 170px;
   z-index: 2;
   box-shadow: 0 0 10px hsla(0,0%,17%,1);
   overflow: auto;
@@ -492,10 +509,39 @@ width: 50%;
 }
 .redHeart > .fa-heart {
   position: absolute;
-  right: 203px;
+  right: 156px;
   top:300px;
   color:red;
   z-index:9;
+}
+.redirectAnchor {
+    position: absolute;
+  top: 341px;
+  height: 20px;
+  left: 515px;
+  width: 20%;
+  border-top: 1px solid black;
+  z-index: 3;
+  text-align: center;
+}
+.redirectAnchor > a {
+  margin: 7px;
+  color:hsla(12,86%,42%,1)
+
+}
+.favoriteHeart {
+  width: 10%;
+  height: 20px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.calendarRedHeart > .fa-heart {
+  position: absolute;
+  right: 236px;
+  top: 1013px;
+  color: red;
+  z-index: 9;
 }
 
 
